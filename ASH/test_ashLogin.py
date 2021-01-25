@@ -13,9 +13,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
-
+from selenium.common.exceptions import InvalidSelectorException
+from selenium.webdriver.support import expected_conditions as EC
 
 # Set options variable
 options = webdriver.ChromeOptions() 
@@ -32,8 +32,8 @@ driver = webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriv
 def ashLogin():
 
     # Username & Password storage
-    username = "Steven"
-    password = "password"
+    username = ""
+    password = ""
 
     # Results declaration
     testResult = ""
@@ -52,7 +52,7 @@ def ashLogin():
     driver.find_element(By.CSS_SELECTOR, ".my-account__icon").click()
     
     # Sign in button declaration
-    element = driver.find_element(By.ID, "okta-signin-password")
+    element = driver.find_element(By.CSS_SELECTOR, "#okta-signin-submit")
 
     # Click on username field
     driver.find_element(By.ID, "okta-signin-username").click()
@@ -87,23 +87,21 @@ def ashLogin():
     # Timestamp: Start Test
     testStart = datetime.now()
 
+
     # Submit login
     (element).click()
 
     # Wait for login successful login attempt
-    #time.sleep(10)
+    time.sleep(10)
 
     # Check to see if login was successful
-    urlSuffix = "ENCRYPTED_TOKEN"
-    expectedURL = "https://sso.hematology.org/" + str(urlSuffix)
-    
-    # Condition if URL is correct and sign in was successful
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    # Condition if URL is incorrect and sign in was unsuccessful
-    else:
+    try:
+        loginSelector = driver.find_element_by_class_name('nav-item__my-account-name')
+        if loginSelector.is_displayed():
+            testResult = "Pass"
+    except NoSuchElementException:
         testResult = "Fail"
-    
+
     # Timestamp: End Test
     testEnd = datetime.now()       
 
@@ -121,9 +119,8 @@ def ashLogin():
     print("                                         ")
     print("############# Login Results #############")
     if testResult == "Fail":
-        print("Expected URL: " + str(expectedURL))
-        print("Actual URL: " + str(driver.current_url))
-    print("URL Test Result: " + str(testResult))
+        print("Username Failed: " + str(username))
+    print("Login Test Result: " + str(testResult))
     print("Speed Test Result: " + str(speedTestResult))
     print(testNotes)
     print("#########################################")
