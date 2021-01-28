@@ -33,7 +33,7 @@ print("....Navigating to the American Society of Hematology webpage...")
 driver.get('http://www.hematology.org/')
 
 
-def module_locator():
+def test_module_locator():
   #components = [, "/html/body/header/ul/li[4]/form/div/span[2]/i","/html/body/header/ul/li[5]", "#top-nav > li:nth-child(5)", "#search > span.search-label > i"]   
   #for element in components:
     
@@ -59,7 +59,7 @@ def module_locator():
     print("#########################################")
 
 # Call Method
-module_locator()
+test_module_locator()
 
 # Wait
 time.sleep(1)

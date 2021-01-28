@@ -28,7 +28,7 @@ driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver
 
 scriptStart = datetime.now()
 
-def allAshLinks():
+def test_allAshLinks():
     # Results declaration
     TestsFound = 0
     TestsNotFound = 0
@@ -100,7 +100,7 @@ def allAshLinks():
     print("                                          ")
 
 # Call Method
-allAshLinks()
+test_allAshLinks()
 
 # Wait
 time.sleep(1)

@@ -29,7 +29,7 @@ driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver
 
 scriptStart = datetime.now()
 
-def allAshComponents():
+def test_allAshComponents():
 
     # Results declaration
     visibleFound = 0
@@ -91,7 +91,7 @@ def allAshComponents():
     print("                                          ")
 
 # Call Method
-allAshComponents()
+test_allAshComponents()
 
 # Wait
 time.sleep(1)

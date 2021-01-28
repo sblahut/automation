@@ -9,12 +9,10 @@ from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import InvalidSelectorException
 from selenium.webdriver.support import expected_conditions as EC
 
 # Set options variable
@@ -29,11 +27,11 @@ options.add_argument('disable-infobars')
 # Set chromedriver variable
 driver = webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
 
-def ashLogin():
+def test_ashLogin():
 
     # Username & Password storage
-    username = ""
-    password = ""
+    username = "002fa@pprodloadtest.com"
+    password = "Ash2020!"
 
     # Results declaration
     testResult = ""
@@ -87,7 +85,6 @@ def ashLogin():
     # Timestamp: Start Test
     testStart = datetime.now()
 
-
     # Submit login
     (element).click()
 
@@ -140,9 +137,10 @@ def ashLogin():
         print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
         print("#########################################")
         print("                                         ")
+    
 
 # Call Method ashLogin
-ashLogin()
+test_ashLogin()
 
 # Wait
 time.sleep(1)
