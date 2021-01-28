@@ -27,6 +27,8 @@ options.add_argument('disable-infobars')
 # Set chromedriver variable
 driver = webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
 
+testResult = ""
+
 def test_ashLogin():
 
     # Username & Password storage
@@ -137,7 +139,6 @@ def test_ashLogin():
         print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
         print("#########################################")
         print("                                         ")
-    
 
 # Call Method ashLogin
 test_ashLogin()
