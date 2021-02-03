@@ -43,7 +43,12 @@ def test_allAshComponents():
     driver.get('https://hematology.org/')
     
     ids = driver.find_elements_by_xpath('//*[@id]')
-    
+
+    print("                                          ")
+    print("############################################################")
+    print('....Listing all components on https://hematology.org/....')
+    print("############################################################")
+
     for id in ids:
 
         title = id.get_attribute('title')

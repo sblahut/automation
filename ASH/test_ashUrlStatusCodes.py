@@ -49,6 +49,12 @@ def test_allAshLinks():
     # Number of links found
     print("Number of links : %s" %len(all_links))
 
+    print("                                          ")
+    print("#########################################################")
+    print('....Listing all URLs on https://hematology.org/....')
+    print("#########################################################")
+    print("                                          ")
+    
     for link in unique_links:
 
         # If condition is met: run status code

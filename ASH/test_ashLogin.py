@@ -84,6 +84,8 @@ def test_ashLogin():
     # Wait
     time.sleep(2)
     
+    print('....Signing into https://sso.hematology.org/ now....')
+
     # Timestamp: Start Test
     testStart = datetime.now()
 
