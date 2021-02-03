@@ -30,6 +30,9 @@ scriptStart = datetime.now()
 def test_worldcourierEventsFilter():
     
     print('....Navigating to www.worldcourier.com/news-and-events/events....')
+    print("                                          ")
+    print("##########################################")
+    print('##### Checking Filter Functionality ######')
 
     # Open ash website
     driver.get('https://www.worldcourier.com/news-and-events/events')
@@ -45,7 +48,7 @@ def test_worldcourierEventsFilter():
     print("############ Upcoming Events #############")
     for id in ids:
         
-        print("Class: " + str(id.text))
+        print("Date: " + str(id.text))
     print("##########################################")
     print("                                          ")
 
@@ -59,11 +62,11 @@ def test_worldcourierEventsFilter():
     print("##########################################")
     print("############## Past Events ###############")
     for id in ids:
-        count = 0       
-        print("Class: " + str(id.text))
-        count +=1
-        if count == 5:
-                break
+               
+        print("Date: " + str(id.text))
+        #count +=1
+        #if id.count == 5:
+        #        break
     print("##########################################")
     print("                                          ") 
 

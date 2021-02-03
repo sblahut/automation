@@ -28,7 +28,10 @@ scriptStart = datetime.now()
 def test_worldcourierInsightsFilter():
 
     print('....Navigating to www.worldcourier.com/insights....')
-
+    print("                                          ")
+    print("##########################################")
+    print('##### Checking Filter Functionality ######')
+    
     # Open ash website
     driver.get('https://www.worldcourier.com/insights')
 
@@ -51,6 +54,7 @@ def test_worldcourierInsightsFilter():
         print("Class: " + str(id.text))
     print("##########################################")
     print("                                          ")
+    
     # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.marginator.margin-top-2 > form > span:nth-child(2) > label > select").click()
 
