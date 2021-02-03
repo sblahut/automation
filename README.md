@@ -7,10 +7,10 @@ Each script has individual variables that can be interchanged to alter users or 
 
 <b>Requirements:</b>
 
-Python 3.9+
-Pip 19.0+
-Chromedriver.exe
-Addition of multi-environment variables if needed.
+Python 3.9+<br>
+Pip 19.0+<br>
+Chromedriver.exe<br>
+Addition of multi-environment variables if needed.<br>
 
 <b>Module Download Links:</b>
 
