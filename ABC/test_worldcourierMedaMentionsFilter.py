@@ -27,27 +27,27 @@ scriptStart = datetime.now()
 
 def test_worldcourierMediaMentionsFilter():
 
-    print('....Navigating to www.worldcourier.com/news-and-events/press-releases....')
+    print('....Navigating to www.worldcourier.com/news-and-events/media-mentions....')
     print("                                          ")
     print("##########################################")
     print('##### Checking Filter Functionality ######')
     # Open ash website
-    driver.get('https://www.worldcourier.com/news-and-events/press-releases')
+    driver.get('https://www.worldcourier.com/news-and-events/media-mentions')
 
     # Accept Cookies
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > div.legal-acknowledgement.background-true-blue > div > div > div > div > form > button").click()
     
     # Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select").click()
 
-    # Click 2012
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(9)").click()
+    # Click 2017
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select > option:nth-child(6)").click()
 
     # Run Results
     ids = driver.find_elements_by_class_name('module__body')
     print("                                          ")
     print("##########################################")
-    print("############## Results 2012 ##############")
+    print("############## Results 2017 ##############")
     for id in ids:
         
         print("Date: " + str(id.text))
@@ -55,64 +55,10 @@ def test_worldcourierMediaMentionsFilter():
     print("                                          ")
     
     # Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
-
-    # Click 2014
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(8)").click()
-
-    # Run Results
-    ids = driver.find_elements_by_class_name('module__body')
-    
-    print("                                          ")
-    print("##########################################")
-    print("############## Results 2014 ##############")
-    for id in ids:
-        
-        print("Date: " + str(id.text))
-    print("##########################################")
-    print("                                          ")
-
-# Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
-
-    # Click 2015
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(7)").click()
-
-    # Run Results
-    ids = driver.find_elements_by_class_name('module__body')
-    
-    print("                                          ")
-    print("##########################################")
-    print("############## Results 2015 ##############")
-    for id in ids:
-        
-        print("Date: " + str(id.text))
-    print("##########################################")
-    print("                                          ")
-
-# Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
-
-    # Click 2016
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(6)").click()
-
-    # Run Results
-    ids = driver.find_elements_by_class_name('module__body')
-    
-    print("                                          ")
-    print("##########################################")
-    print("############## Results 2016 ##############")
-    for id in ids:
-        
-        print("Date: " + str(id.text))
-    print("##########################################")
-    print("                                          ")
-
-# Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select").click()
 
     # Click 2018
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(5)").click()
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select > option:nth-child(5)").click()
 
     # Run Results
     ids = driver.find_elements_by_class_name('module__body')
@@ -126,11 +72,11 @@ def test_worldcourierMediaMentionsFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
+    # Click Dropdown
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select").click()
 
     # Click 2019
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(4)").click()
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select > option:nth-child(4)").click()
 
     # Run Results
     ids = driver.find_elements_by_class_name('module__body')
@@ -144,11 +90,11 @@ def test_worldcourierMediaMentionsFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
+    # Click Dropdown
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select").click()
 
     # Click 2020
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(3)").click()
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select > option:nth-child(3)").click()
 
     # Run Results
     ids = driver.find_elements_by_class_name('module__body')
@@ -162,11 +108,11 @@ def test_worldcourierMediaMentionsFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
+    # Click Dropdown
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select").click()
 
     # Click Last 6 Months
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select > option:nth-child(2)").click()
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div:nth-child(2) > form > span > label > select > option:nth-child(2)").click()
 
     # Run Results
     ids = driver.find_elements_by_class_name('module__body')

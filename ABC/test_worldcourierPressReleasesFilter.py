@@ -72,7 +72,7 @@ def test_worldcourierPressReleasesFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
+    # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
 
     # Click 2015
@@ -90,7 +90,7 @@ def test_worldcourierPressReleasesFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
+    # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
 
     # Click 2016
@@ -108,7 +108,7 @@ def test_worldcourierPressReleasesFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
+    # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
 
     # Click 2018
@@ -126,7 +126,7 @@ def test_worldcourierPressReleasesFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
+    # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
 
     # Click 2019
@@ -144,7 +144,7 @@ def test_worldcourierPressReleasesFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
+    # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
 
     # Click 2020
@@ -162,7 +162,7 @@ def test_worldcourierPressReleasesFilter():
     print("##########################################")
     print("                                          ")
 
-# Click Dropdown
+    # Click Dropdown
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__top > div.marginator.margin-top-2 > form > span > label > select").click()
 
     # Click Last 6 Months
