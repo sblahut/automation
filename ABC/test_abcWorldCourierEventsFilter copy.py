@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys 
+from itertools import islice
 
 # Set options variable
 options = webdriver.ChromeOptions() 
@@ -61,8 +62,7 @@ def test_abcWorldCourierEventsFilter ():
     print("                                          ")
     print("##########################################")
     print("############## Past Events ###############")
-    for id in ids:
-               
+    for id in islice(ids, 0, 10, 1):
         print("Date: " + str(id.text))
         #count +=1
         #if id.count == 5:

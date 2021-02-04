@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys 
+from itertools import islice
 
 # Set options variable
 options = webdriver.ChromeOptions() 
@@ -49,8 +50,7 @@ def test_abcWorldCourierInsightsFilter():
     print("                                          ")
     print("##########################################")
     print("############## Results A-Z ###############")
-    for id in ids:
-        
+    for id in islice(ids, 0, 10, 1):        
         print("Class: " + str(id.text))
     print("##########################################")
     print("                                          ")
@@ -67,8 +67,7 @@ def test_abcWorldCourierInsightsFilter():
     print("                                          ")
     print("##########################################")
     print("############## Results Z-A ###############")
-    for id in ids:
-        
+    for id in islice(ids, 0, 10, 1):        
         print("Class: " + str(id.text))
     print("##########################################")
     print("                                          ")
