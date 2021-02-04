@@ -2,6 +2,8 @@
 ############# American Society of Hematology Site Automation Module Locator Script #############
 ################################################################################################
 
+# The 'element' variable will determine which web element you are trying to locate on the webpage. 
+
 from selenium import webdriver
 import time
 from datetime import datetime
@@ -34,12 +36,10 @@ driver.get('http://www.hematology.org/')
 
 
 def test_module_locator():
-  #components = [, "/html/body/header/ul/li[4]/form/div/span[2]/i","/html/body/header/ul/li[5]", "#top-nav > li:nth-child(5)", "#search > span.search-label > i"]   
-  #for element in components:
-    
+     
   try:
     
-    #element = driver.find_element_by_xpath('//a[contains(text({})'.format(components)) 
+    # Set the element in which you want to find here.
     element = driver.find_element_by_css_selector("#search > span.search-label > i")
     
     # Condition if element is found
