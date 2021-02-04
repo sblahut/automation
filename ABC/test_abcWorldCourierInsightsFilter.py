@@ -32,7 +32,7 @@ def test_abcWorldCourierInsightsFilter():
     print("##########################################")
     print('##### Checking Filter Functionality ######')
     
-    # Open ash website
+    # Open wc website
     driver.get('https://www.worldcourier.com/insights')
 
     # Accept Cookies

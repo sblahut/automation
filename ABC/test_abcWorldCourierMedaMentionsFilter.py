@@ -31,7 +31,7 @@ def test_abcWorldCourierMedaMentionsFilter():
     print("                                          ")
     print("##########################################")
     print('##### Checking Filter Functionality ######')
-    # Open ash website
+    # Open wc website
     driver.get('https://www.worldcourier.com/news-and-events/media-mentions')
 
     # Accept Cookies

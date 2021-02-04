@@ -14,7 +14,7 @@ from selenium.webdriver.common.keys import Keys
 # Set options variable
 options = webdriver.ChromeOptions() 
 
-count = 0
+#count = 0
 
 # Maximize window
 options.add_argument("start-maximized")
@@ -34,7 +34,7 @@ def test_abcWorldCourierEventsFilter ():
     print("##########################################")
     print('##### Checking Filter Functionality ######')
 
-    # Open ash website
+    # Open wc website
     driver.get('https://www.worldcourier.com/news-and-events/events')
 
     # Accept Cookies
