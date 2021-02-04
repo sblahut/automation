@@ -1,5 +1,5 @@
 ################################################################################################
-############### World Courier Site Automation Insights Filter Test Script ######################
+################ World Courier Site Automation Events Filter Test Script #######################
 ################################################################################################
 
 import requests
@@ -14,6 +14,8 @@ from selenium.webdriver.common.keys import Keys
 # Set options variable
 options = webdriver.ChromeOptions() 
 
+count = 0
+
 # Maximize window
 options.add_argument("start-maximized")
 
@@ -25,56 +27,53 @@ driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver
 
 scriptStart = datetime.now()
 
-def test_worldcourierInsightsFilter():
-
-    print('....Navigating to www.worldcourier.com/insights....')
+def test_abcWorldCourierEventsFilter ():
+    
+    print('....Navigating to www.worldcourier.com/news-and-events/events....')
     print("                                          ")
     print("##########################################")
     print('##### Checking Filter Functionality ######')
-    
+
     # Open ash website
-    driver.get('https://www.worldcourier.com/insights')
+    driver.get('https://www.worldcourier.com/news-and-events/events')
 
     # Accept Cookies
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > div.legal-acknowledgement.background-true-blue > div > div > div > div > form > button").click()
     
-    # Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.marginator.margin-top-2 > form > span:nth-child(2) > label > select").click()
-
-    # Click A-Z
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.marginator.margin-top-2 > form > span:nth-child(2) > label > select > option:nth-child(3)").click()
-
     # Run Results
-    ids = driver.find_elements_by_class_name('module__title')
-    print("                                          ")
-    print("##########################################")
-    print("############## Results A-Z ###############")
-    for id in ids:
-        
-        print("Class: " + str(id.text))
-    print("##########################################")
-    print("                                          ")
-    
-    # Click Dropdown
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.marginator.margin-top-2 > form > span:nth-child(2) > label > select").click()
-
-    # Click Z-A
-    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.marginator.margin-top-2 > form > span:nth-child(2) > label > select > option:nth-child(4)").click()
-
-    # Run Results
-    ids = driver.find_elements_by_class_name('module__title')
+    ids = driver.find_elements_by_class_name('module__body')
     
     print("                                          ")
     print("##########################################")
-    print("############## Results Z-A ###############")
+    print("############ Upcoming Events #############")
     for id in ids:
         
-        print("Class: " + str(id.text))
+        print("Date: " + str(id.text))
     print("##########################################")
     print("                                          ")
+
+    # Click Past Events
+    driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.tab-nav > div.tab-nav__nav > div > div > nav > a:nth-child(2)").click()
+    
+    # Run Results
+    ids = driver.find_elements_by_class_name('module__body')
+    
+    print("                                          ")
+    print("##########################################")
+    print("############## Past Events ###############")
+    for id in ids:
+               
+        print("Date: " + str(id.text))
+        #count +=1
+        #if id.count == 5:
+        #        break
+    print("##########################################")
+    print("                                          ") 
+
+   
 
 # Call Method
-test_worldcourierInsightsFilter()
+test_abcWorldCourierEventsFilter ()
 
 # Wait
 time.sleep(1)
@@ -83,5 +82,5 @@ time.sleep(1)
 driver.quit()  
 
 ################################################################################################
-############### World Courier Site Automation Insights Filter Test Script ######################
+################ World Courier Site Automation Events Filter Test Script #######################
 ################################################################################################

@@ -25,7 +25,7 @@ driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver
 
 scriptStart = datetime.now()
 
-def test_worldcourierMediaMentionsFilter():
+def test_abcWorldCourierMedaMentionsFilter():
 
     print('....Navigating to www.worldcourier.com/news-and-events/media-mentions....')
     print("                                          ")
@@ -127,7 +127,7 @@ def test_worldcourierMediaMentionsFilter():
     print("                                          ")
 
 # Call Method
-test_worldcourierMediaMentionsFilter()
+test_abcWorldCourierMedaMentionsFilter()
 
 # Wait
 time.sleep(1)
