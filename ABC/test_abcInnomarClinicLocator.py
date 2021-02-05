@@ -21,8 +21,6 @@ options.add_argument("start-maximized")
 # Disable info bars
 options.add_argument('disable-infobars')
 
-testResult = ''
-
 # Set chromedriver variable
 driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
 
@@ -142,21 +140,6 @@ time.sleep(1)
 
 #Test is complete
 driver.quit()  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ################################################################################################
 ################### Innomar Site Automation Clinic Locator Test Script #########################
