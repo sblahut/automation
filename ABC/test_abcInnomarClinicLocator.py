@@ -3,8 +3,7 @@
 ################################################################################################
 
 import requests
-import time
-from datetime import datetime
+import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,7 +23,7 @@ options.add_argument('disable-infobars')
 # Set chromedriver variable
 driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
 
-scriptStart = datetime.now()
+scriptStart = datetime.datetime.now()
 
 def test_abcInnomarClinicLocator ():
 
@@ -43,9 +42,6 @@ def test_abcInnomarClinicLocator ():
     print("                                          ")
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.location-finder > div.location-finder-search-wrapper.background-true-blue > div > div > div > form > div > button.location-finder-search__button").click()
 
-    # Wait
-    time.sleep(2)
-
     # Run Results
     ids = driver.find_elements(By.CLASS_NAME, "location-card__address")
     
@@ -58,18 +54,12 @@ def test_abcInnomarClinicLocator ():
     print("##########################################")
     print("                                          ")
 
-    # Wait
-    time.sleep(2)
-
     # Search 'Central'
     search.clear()
     search.send_keys("Central")
     print('....Searching for Central Region....')
     print("                                          ")
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.location-finder > div.location-finder-search-wrapper.background-true-blue > div > div > div > form > div > button.location-finder-search__button").click()
-
-    # Wait
-    time.sleep(2)
 
     # Run Results
     ids = driver.find_elements(By.CLASS_NAME, "location-card__address")
@@ -82,9 +72,6 @@ def test_abcInnomarClinicLocator ():
         print("Address: " + str(id.text))
     print("##########################################")
     print("                                          ")
-    
-    # Wait
-    time.sleep(2)
 
     # Search '98101'
     search.clear()
@@ -92,9 +79,6 @@ def test_abcInnomarClinicLocator ():
     print('....Searching for 98101 Zip Code....')
     print("                                          ")
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.location-finder > div.location-finder-search-wrapper.background-true-blue > div > div > div > form > div > button.location-finder-search__button").click()
-
-    # Wait
-    time.sleep(2)
 
     # Run Results
     ids = driver.find_elements(By.CLASS_NAME, "location-card__address")
@@ -108,17 +92,11 @@ def test_abcInnomarClinicLocator ():
     print("##########################################")
     print("                                          ")
 
-    # Wait
-    time.sleep(2)
-
     # Search 'Current Location'
     search.clear()
     print('....Searching by Current Location....')
     print("                                          ")
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div.location-finder > div.location-finder-search-wrapper.background-true-blue > div > div > div > form > div > button.location-finder-search__button--location").click()
-
-    # Wait
-    time.sleep(2)
 
     # Run Results
     ids = driver.find_elements(By.CLASS_NAME, "location-card__address")
@@ -135,8 +113,11 @@ def test_abcInnomarClinicLocator ():
 # Call Method
 test_abcInnomarClinicLocator ()
 
-# Wait
-time.sleep(1)
+print("##########################################")
+print("############## Test Complete #############")
+print("Total Run Time of Script: " + str(datetime.datetime.now() - scriptStart))
+print("##########################################")
+print("                                          ")
 
 #Test is complete
 driver.quit()  

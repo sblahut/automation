@@ -3,8 +3,7 @@
 ################################################################################################
 
 import requests
-import time
-from datetime import datetime
+import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,7 +23,7 @@ options.add_argument('disable-infobars')
 # Set chromedriver variable
 driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
 
-scriptStart = datetime.now()
+scriptStart = datetime.datetime.now()
 
 def test_abcXcendaDecisionMap ():
     
@@ -61,9 +60,6 @@ def test_abcXcendaDecisionMap ():
     # Unselect '5-aminolevulinic acid'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div:nth-child(1) > div > div > div > form > div:nth-child(1) > label > dl > dd > div > ul > li:nth-child(1) > label").click()
 
-    # Wait
-    time.sleep(2)
-
     print('....Filtering by Therapeutic Area....')
 
    # Click therapeutic area dropdown
@@ -86,9 +82,6 @@ def test_abcXcendaDecisionMap ():
 
     # Unselect 'acromegaly'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div:nth-child(1) > div > div > div > form > div:nth-child(2) > label > dl > dd > div > ul > li:nth-child(1) > label").click()
-
-    # Wait
-    time.sleep(2)
 
     print('....Filtering by Country....')
 
@@ -113,9 +106,6 @@ def test_abcXcendaDecisionMap ():
     # Unselect 'Australia'
     driver.find_element(By.CSS_SELECTOR, "#Australia\ \(PBAC\)").click()
 
-    # Wait
-    time.sleep(2)
-
     print('....Filtering by Year....')
 
    # Click year dropdown
@@ -139,9 +129,6 @@ def test_abcXcendaDecisionMap ():
     # Unselect '2012'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div:nth-child(1) > div > div > div > form > div:nth-child(4) > label > dl > dd > div > ul > li:nth-child(1) > label").click()
 
-    # Wait
-    time.sleep(2)
-
     print('....Filtering by Decision....')
 
    # Click decision dropdown
@@ -164,9 +151,6 @@ def test_abcXcendaDecisionMap ():
 
     # Unselect 'favorable'
     driver.find_element(By.CSS_SELECTOR, "#Favorable").click()
-
-    # Wait
-    time.sleep(2)
 
     print('....Sorting by Year....')
 
@@ -192,9 +176,6 @@ def test_abcXcendaDecisionMap ():
     # Unselect 'year'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div.decision-card-list > div.container > div > div > div > div > span:nth-child(1) > label > span.filter__form-item__control > div > select > option:nth-child(2)").click()
 
-    # Wait
-    time.sleep(2)
-
     print('....Sorting by Country....')
 
    # Click sort by dropdown
@@ -218,9 +199,6 @@ def test_abcXcendaDecisionMap ():
 
     # Unselect 'country'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div.decision-card-list > div.container > div > div > div > div > span:nth-child(1) > label > span.filter__form-item__control > div > select > option:nth-child(3)").click()
-
-    # Wait
-    time.sleep(2)
 
     print('....Sorting by Decision....')
 
@@ -246,9 +224,6 @@ def test_abcXcendaDecisionMap ():
     # Unselect 'decision'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div.decision-card-list > div.container > div > div > div > div > span:nth-child(1) > label > span.filter__form-item__control > div > select > option:nth-child(4)").click()
 
-    # Wait
-    time.sleep(2)
-
     print('....Sorting by Therapeutic Area....')
 
    # Click sort by dropdown
@@ -273,14 +248,14 @@ def test_abcXcendaDecisionMap ():
     # Unselect 'therapeutic area'
     driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(2) > main > div > div.content__middle > div:nth-child(3) > div > div.decision-card-list > div.container > div > div > div > div > span:nth-child(1) > label > span.filter__form-item__control > div > select > option:nth-child(5)").click()
 
-    # Wait
-    time.sleep(2)
-
 # Call Method
 test_abcXcendaDecisionMap ()
 
-# Wait
-time.sleep(1)
+print("##########################################")
+print("############## Test Complete #############")
+print("Total Run Time of Script: " + str(datetime.datetime.now() - scriptStart))
+print("##########################################")
+print("                                          ")
 
 #Test is complete
 driver.quit()  

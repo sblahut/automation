@@ -67,7 +67,7 @@ def test_abcWorldCourierInsightsFilter():
     print("                                          ")
     print("##########################################")
     print("############## Results Z-A ###############")
-    for id in islice(ids, 0, 10, 1):        
+    for id in islice(ids, 0, 10, 1):            
         print("Class: " + str(id.text))
     print("##########################################")
     print("                                          ")

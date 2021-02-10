@@ -29,7 +29,7 @@ print("                                          ")
 print("##########################################")
 print('####### Checking PDP Page Layout #########')
 print("                                          ")
-# Open xcenda website
+# Open securos website
 driver.get('https://www.securos.com/catalog-selector/us-product-catalog/power-equipment/arbutus/sawcover-system/arbutus---sagittal-saw-blade-13mm')
 # Accept Cookies
 driver.find_element(By.CSS_SELECTOR, "body > div:nth-child(3) > div.legal-acknowledgement.background-true-blue > div > div > div > div > form > button").click()
@@ -167,18 +167,22 @@ def test_abcSecurosProductWishList ():
     print("######## TEST CASE: REQUEST QUOTE ########")
     print("Expected URL: " + expectedURL)
     print("Current URL: " + driver.current_url)
-    print("##########################################")
     if driver.current_url == expectedURL:
         print('### RESULT: ############ PASS ############')
     else:
         print('### RESULT: ############ FAIL ############')
     print("##########################################")
 
-    
-
 # Call Methods
 test_abcSecurosProductDetailLayout ()
 test_abcSecurosProductWishList ()
+
+print("                                          ")
+print("##########################################")
+print("############## Test Complete #############")
+print("Total Run Time of Script: " + str(datetime.datetime.now() - scriptStart))
+print("##########################################")
+print("                                          ")
 
 #Test is complete
 driver.quit()  

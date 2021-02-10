@@ -50,7 +50,7 @@ def test_allAshComponents():
     print("############################################################")
 
     for id in ids:
-
+ 
         title = id.get_attribute('title')
         cssClass = id.get_attribute('class')
         href = id.get_attribute('href')
