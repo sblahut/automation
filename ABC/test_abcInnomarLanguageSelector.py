@@ -42,7 +42,7 @@ def test_abcInnomarLanguageSelector ():
     
     # Select French
     print("....Changing language to French....")
-    driver.find_element(By.CSS_SELECTOR, "#languages > a:nth-child(2)").click()
+    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#languages > a:nth-child(2)"))).click()  
 
     # Run Results
     html = requests.get(driver.current_url).content
@@ -59,14 +59,14 @@ def test_abcInnomarLanguageSelector ():
 
     # Select English
     print("....Changing language to English....")
-    driver.find_element(By.CSS_SELECTOR, "#languages > a:nth-child(1)").click()  
+    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#languages > a:nth-child(1)"))).click()  
 
     # Run Results
     html = requests.get(driver.current_url).content
     soup = BeautifulSoup(html, 'html.parser')
     print("                                          ")
     print("##########################################")
-    print("######### Test Case #1: English ##########")
+    print("######### Test Case #2: English ##########")
     print("##### Detect Language: " + str(soup.html["lang"]) + "            #####")
     print("##########################################")
     print("                                          ")
