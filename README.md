@@ -20,6 +20,7 @@ Time: https://pypi.org/project/times/<br>
 Pip: https://pypi.org/project/pip/#files<br>
 Selenium: https://pypi.org/project/selenium/#files<br>
 Beautiful Soup: https://pypi.org/project/beautifulsoup4/<br>
+Open CV: https://pypi.org/project/opencv-python/<br>
 
 <b>Contributors</b>
 
