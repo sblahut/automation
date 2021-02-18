@@ -1,13 +1,14 @@
-import cv2
+from cv2 import cv2
+import numpy as np
 
 # Load the cascade
-face_cascade = cv2.CascadeClassifier('FaceDetect/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('facial_detection/haarcascade_frontalface_default.xml')
 
 # To capture video from webcam. 
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
 
 # To use a video file as input 
-#cap = cv2.VideoCapture('FaceDetect/alicia.MOV')
+cap = cv2.VideoCapture('facial_detection/face-demographics-walking.gif')
 
 while True:
 
