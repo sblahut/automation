@@ -1,8 +1,2 @@
-Text(@.5, 1.4, 'GNT218@ license plate’)
-
-GWT2180 license plate
-
-WT 2188
-
- 
+aw-74043|
 
