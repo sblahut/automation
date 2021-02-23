@@ -3,8 +3,12 @@
 *.pyc
 *.log
 *.key
-/ASH/**
-/AB/*
+AB/
+ABC/
+ASH/
+Geekhive/
+Starr Wright/
+
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
