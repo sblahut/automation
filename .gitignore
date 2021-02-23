@@ -1,5 +1,5 @@
 *.pyc
-*.key
+.key
 automation/ASH/
 AB/
 
