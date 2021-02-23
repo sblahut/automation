@@ -1,8 +1,17 @@
+# Removed Project Work
 /AB/
 /ABC/
 /ASH/
 /Geekhive/
 /Starr Wright/
+/validation-screenshots
+
+# Removed uneeded project files
+*.key
+*.png
+*.txt
+*.log
+
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
 
 ### Python ###
