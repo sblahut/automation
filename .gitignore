@@ -1,10 +1,10 @@
 # Removed Project Work
-/AB*
-/ABC*
-/ASH*
-/Geekhive*
-/Starr Wright*
-/validation-screenshots*
+#/AB/
+#/ABC/
+/ASH/test_ashLogin.py
+#/Geekhive/
+/Starr Wright/
+/validation-screenshots/*
 
 # Removed uneeded project files
 #*.key
