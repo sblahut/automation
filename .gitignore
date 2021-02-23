@@ -1,14 +1,11 @@
-# Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
-
-*.pyc
-*.log
-*.key
 AB/
 ABC/
 ASH/
 Geekhive/
 Starr Wright/
 
+
+# Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
