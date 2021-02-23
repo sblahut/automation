@@ -9,8 +9,8 @@
 # Removed uneeded project files
 *.key
 *.png
-.txt
-.png
+/.txt
+/.png
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
 
