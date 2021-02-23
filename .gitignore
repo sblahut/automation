@@ -1,16 +1,16 @@
 # Removed Project Work
-/AB/
-/ABC/
-/ASH/
-/Geekhive/
-/Starr Wright/
-/validation-screenshots
+/AB/*
+/ABC/*
+/ASH/*
+/Geekhive/*
+/Starr Wright/*
+/validation-screenshots*
 
 # Removed uneeded project files
-/token.key
-*.png
-/output.txt
-/ocr.png
+#*.key
+#*.png
+#*.txt
+#*.png
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
 
