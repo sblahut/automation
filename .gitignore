@@ -7,10 +7,10 @@
 /validation-screenshots
 
 # Removed uneeded project files
-*.key
+/token.key
 *.png
-/.txt
-/.png
+/output.txt
+/ocr.png
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
 
