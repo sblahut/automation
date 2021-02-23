@@ -22,6 +22,21 @@ Selenium: https://pypi.org/project/selenium/#files<br>
 Beautiful Soup: https://pypi.org/project/beautifulsoup4/<br>
 Open CV: https://pypi.org/project/opencv-python/<br>
 Numpy: https://pypi.org/project/numpy/<br>
+Cryptography: https://pypi.org/project/cryptography/<br>
+Fernet: https://pypi.org/project/fernet/<br>
+
+<b>Projects</b>
+
+AB: AEM Migration - Validation Scripts<br>
+ABC: AmerisourceBergen - Automation Test Suite<br>
+Anomaly Detection - Offset Data Detection (Ghost Detection)<br>
+anpr_detection - Automatic Number Plate Recognition (License Plate Recognition - (Webcam/Video/Image))<br>
+ASH: American Society of Hematology - Automation Test Suite<br>
+encryption-decryption - Encryption/Decryption Script (.csv/password strings)<br>
+facial_detection - Facial Detection (Webcam/Video/Image)<br>
+Geekhive - Automation Test Suite<br>
+Misc - Various samples projects<br>
+Starr Wright - Sample search script<br>
 
 <b>Contributors</b>
 
