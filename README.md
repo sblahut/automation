@@ -29,7 +29,7 @@ Fernet: https://pypi.org/project/fernet/<br>
 
 AB: AEM Migration - Validation Scripts<br>
 ABC: AmerisourceBergen - Automation Test Suite<br>
-Anomaly Detection - Offset Data Detection (Ghost Detection)<br>
+anomaly_detection - Offset Data Detection (Ghost Detection)<br>
 anpr_detection - Automatic Number Plate Recognition (License Plate Recognition - (Webcam/Video/Image))<br>
 ASH: American Society of Hematology - Automation Test Suite<br>
 encryption-decryption - Encryption/Decryption Script (.csv/password strings)<br>
