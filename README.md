@@ -35,6 +35,7 @@ ASH: American Society of Hematology - Automation Test Suite<br>
 encryption-decryption - Encryption/Decryption Script (.csv/password strings)<br>
 facial_detection - Facial Detection (Webcam/Video/Image)<br>
 Geekhive - Automation Test Suite<br>
+Starr - Coming Soon...<br>
 
 <b>Contributors</b>
 
