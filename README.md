@@ -24,6 +24,10 @@ Open CV: https://pypi.org/project/opencv-python/<br>
 Numpy: https://pypi.org/project/numpy/<br>
 Cryptography: https://pypi.org/project/cryptography/<br>
 Fernet: https://pypi.org/project/fernet/<br>
+Playsound: https://pypi.org/project/playsound/<br>
+Imutils: https://pypi.org/project/imutils/<br>
+Dlib: https://pypi.org/project/dlib/<br>
+Cmake: https://pypi.org/project/cmake/<br>
 
 <b>Projects</b>
 
@@ -31,6 +35,7 @@ AB: AEM Migration - Validation Scripts<br>
 ABC: AmerisourceBergen - Automation Test Suite<br>
 anomaly_detection - Offset Data Detection (Ghost Detection)<br>
 anpr_detection - Automatic Number Plate Recognition (License Plate Recognition - (Webcam/Video/Image))<br>
+drowsy_driver_detector - Drowsy Driver Detector - Will trigger an alarm when your eyes close for a specific amount of time.<br>
 ASH: American Society of Hematology - Automation Test Suite<br>
 encryption-decryption - Encryption/Decryption Script (.csv/password strings)<br>
 facial_detection - Facial Detection (Webcam/Video/Image)<br>
