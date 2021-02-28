@@ -5,7 +5,7 @@
 #/Geekhive/
 /Starr Wright/
 /validation-screenshots/*
-
+/drowsy_driver_detector/shape_predictor_68_face_landmarks.dat
 # Removed uneeded project files
 #*.key
 #*.png
