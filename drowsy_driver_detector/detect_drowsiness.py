@@ -33,7 +33,7 @@ def eye_aspect_ratio(eye):
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--shape-predictor", default="drowsy_driver_detector/shape_predictor_68_face_landmarks.dat",
 	help="path to facial landmark predictor")
-ap.add_argument("-a", "--alarm", type=str, default="drowsy_driver_detector/alarm.wav",
+ap.add_argument("-a", "--alarm", type=str, default="drowsy_driver_detector/honk_honk_x.wav",
 	help="path alarm .WAV file")
 ap.add_argument("-w", "--webcam", type=int, default=0,
 	help="index of webcam on system")
@@ -44,7 +44,7 @@ args = vars(ap.parse_args())
 # frames the eye must be below the threshold for to set off the
 # alarm
 EYE_AR_THRESH = 0.3
-EYE_AR_CONSEC_FRAMES = 48
+EYE_AR_CONSEC_FRAMES = 12
 # initialize the frame counter as well as a boolean used to
 # indicate if the alarm is going off
 COUNTER = 0
@@ -72,7 +72,7 @@ while True:
 	# it, and convert it to grayscale
 	# channels)
 	frame = vs.read()
-	frame = imutils.resize(frame, width=450)
+	frame = imutils.resize(frame, width=800)
 	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 	# detect faces in the grayscale frame
 	rects = detector(gray, 0)
@@ -123,7 +123,7 @@ while True:
 						t.deamon = True
 						t.start()
 				# draw an alarm on the frame
-				cv2.putText(frame, "DROWSINESS ALERT!", (10, 30),
+				cv2.putText(frame, "DANGER!", (10, 30),
 					cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 		# otherwise, the eye aspect ratio is not below the blink
 		# threshold, so reset the counter and alarm
