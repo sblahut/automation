@@ -1,7 +1,10 @@
 <b>Synopsis</b>
 
-This is automated testing done through selenium and python. The project is divided by folders for each sub-project. Within each folder contains a chromedriver.exe for headless browsing and individual test cases.
-Installation
+Selenium Projects: This is automated testing done through selenium and python. The project is divided by folders for each sub-project. Within each folder contains a chromedriver.exe for headless browsing and individual test cases.
+
+Machine Learning / AI Projects: These are various projects in different aspects of machine learning and artificial intelligence.
+
+<b>Installation</b>
 
 Each script has individual variables that can be interchanged to alter users or domains.
 
