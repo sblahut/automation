@@ -38,7 +38,8 @@ anpr_detection - Automatic Number Plate Recognition (License Plate Recognition -
 drowsy_driver_detector - Drowsy Driver Detector - Will trigger an alarm when your eyes close for a specific amount of time.<br>
 ASH: American Society of Hematology - Automation Test Suite<br>
 encryption-decryption - Encryption/Decryption Script (.csv/password strings)<br>
-facial_detection - Facial Detection (Webcam/Video/Image)<br>
+facial_detection - Detects if there are faces in a (Webcam/Video/Image)<br>
+traffic_sign_detection - Detects which traffic sign it is in a (Webcam/Video/Image)<br>
 Geekhive - Automation Test Suite<br>
 Starr - Coming Soon...<br>
 
