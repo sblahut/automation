@@ -6,6 +6,10 @@
 /Starr Wright/
 /validation-screenshots/*
 /drowsy_driver_detector/shape_predictor_68_face_landmarks.dat
+/pytorch_game
+/traffic_sign_detection/Meta
+/traffic_sign_detection/Test
+/traffic_sign_detection/Train
 # Removed uneeded project files
 #*.key
 #*.png
