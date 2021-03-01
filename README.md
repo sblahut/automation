@@ -28,6 +28,11 @@ Playsound: https://pypi.org/project/playsound/<br>
 Imutils: https://pypi.org/project/imutils/<br>
 Dlib: https://pypi.org/project/dlib/<br>
 Cmake: https://pypi.org/project/cmake/<br>
+Tensorflow: https://pypi.org/project/tensorflow/<br>
+Pandas: https://pypi.org/project/pandas/<br>
+PIL: https://pypi.org/project/Pillow/<br>
+Keras: https://pypi.org/project/Keras/<br>
+Skern/Scikit-Learn: https://pypi.org/project/sklearn/ / https://pypi.org/project/scikit-learn/<br>
 
 <b>Projects</b>
 
