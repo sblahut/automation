@@ -10,7 +10,7 @@
 /traffic_sign_detection/Meta
 /traffic_sign_detection/Test
 /traffic_sign_detection/Train
-/Starr
+#/Starr
 # Removed uneeded project files
 #*.key
 #*.png
