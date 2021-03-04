@@ -27,7 +27,7 @@ driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver
 scriptStart = datetime.datetime.now()
 
 print("                                          ")
-print('....Navigating to World Courer Home Page....')
+print('....Navigating to World Courier Home Page....')
 print("                                          ")
 
 # Open world courier website
