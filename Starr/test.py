@@ -52,16 +52,21 @@ print("....Navigating to the Starr Companies homepage...")
 driver.get("https://www.starrcompanies.com/")
 expectedURL = StarrEnvironmentLink
 
+# Accept Cookies
+driver.find_element(By.CSS_SELECTOR, "body > div.privacy-warning.permisive > div.submit > a").click()  
+
 def test_starrHomePage (testsPass,testsFail, testsWarning, testResult):
 
-    # Open Nav and navigate to International
-    driver.find_element(By.CSS_SELECTOR, "#link-group-1 > a").click()
+    ############################################################################################
+    #                                    START TEST CASE #9                                    #
+    ############################################################################################
 
-    driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li:nth-child(2) > a").click()
-    driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li.flyout-nav__list-item.flyout-nav__list-item--active > div > ul > li:nth-child(2) > a").click()
-    driver.implicitly_wait(15)
-    driver.switch_to.window(driver.window_handles[1])
-    expectedURL = "https://international.starrlink.com/"
+    # Timestamp: Start Test
+    testStart = datetime.now()
+
+    # Click Report a Claim Link
+    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(2)").click()
+    expectedURL = StarrEnvironmentLink + "Client-Services/Claims"
 
     if driver.current_url == expectedURL:
         testResult = "Pass"
@@ -82,11 +87,17 @@ def test_starrHomePage (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************International Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***************Report a Claim Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************Report a Claim Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -104,11 +115,95 @@ def test_starrHomePage (testsPass,testsFail, testsWarning, testResult):
         testsWarning += 1
 
     # Close Tab
-    driver.close()
+    #driver.close()
 
     # Switch Back To First Tab
-    driver.switch_to.window(driver.window_handles[0])
+    #driver.switch_to.window(driver.window_handles[0])
 
     # Wait
     driver.implicitly_wait(15)
+
+    # Print Results Of Test Script
+    print("##########################################")
+    print("####### Footer Links Test Results ########")
+    print("##########################################")
+    print("Number of Pass Results: " + str(testsPass))
+    print("Number of Fail Results: " + str(testsFail))
+    print("Number of Warnings: " + str(testsWarning))
+    print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
+    print("##########################################")
+    print("############## Test Complete #############")
+    print("##########################################")
+
+    ############################################################################################
+    #                                      END TEST CASE #9                                    #
+    ############################################################################################
+    
+    ############################################################################################
+    #                                   START TEST CASE #10                                    #
+    ############################################################################################
+
+    # Reset Page
+    #driver.find_element(By.CSS_SELECTOR, "#header > header > div.main-nav > a > img").click()
+
+    # Timestamp: Start Test
+    testStart = datetime.now()
+
+    # Click View All News Link
+    driver.find_element(By.CSS_SELECTOR, "#content > div.newsfeed > div.newsfeed__view-all-container > div > a").click()
+    expectedURL = StarrEnvironmentLink + "News"
+
+    if driver.current_url == expectedURL:
+        testResult = "Pass"
+    else:
+        testResult = "Fail"
+
+    # Timestamp: End Test
+    testEnd = datetime.now()
+
+    # Validation of Page Load Speed
+    testTime = (testEnd - testStart)
+    if testTime.seconds > expectedPageLoadTimeInSeconds:
+        speedTestResult = "Warning"
+        testNotes = "Page load time is slow. Time: " + str(testTime)
+    else:
+        speedTestResult = "Pass"
+        testNotes = "Page load time is: " + str(testTime)
+
+    # Record Results
+    testTime = (testEnd - testStart)
+
+    if testResult == "Fail":
+        print("***************View All News Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************View All News Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
+
+    # Record Results To Tally For Final Results
+    if testResult == "Pass":
+        testsPass += 1
+    elif testResult == "Fail":
+        testsFail += 1
+    elif testResult == "Warning":
+        testsWarning += 1
+
+    if speedTestResult == "Pass":
+        testsPass += 1
+    elif speedTestResult == "Fail":
+        testsFail += 1
+    elif speedTestResult == "Warning":
+        testsWarning += 1
+
+    # Wait
+    driver.implicitly_wait(15)
+
+    ############################################################################################
+    #                                     END TEST CASE #10                                    #
+    ############################################################################################
+
 test_starrHomePage (testsPass,testsFail, testsWarning, testResult)
