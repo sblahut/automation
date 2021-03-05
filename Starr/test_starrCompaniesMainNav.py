@@ -78,23 +78,17 @@ def test_starrHomePage (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********************Homepage Results**********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
 
-    # Print Results Of Test Script
-    print("##########################################")
-    print("########### Overall Test Results #########")
-    print("##########################################")
-    print("Number of Pass Results: " + str(testsPass))
-    print("Number of Fail Results: " + str(testsFail))
-    print("Number of Warnings: " + str(testsWarning))
-    print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
-    print("##########################################")
-    print("############## Test Complete #############")
-    print("##########################################")
+    if testResult == "Fail":
+        print("********************Homepage Results**********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********************Homepage Results**********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
 ####################################################################################################
 #                                      START HEADER LINKS                                          #
@@ -131,11 +125,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******************Logo Link Results**********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******************Logo Link Results**********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******************Logo Link Results**********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -189,11 +189,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Careers Link Results*********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Careers Link Results*********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Careers Link Results*********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -250,11 +256,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***********Accident and Health Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***********Accident and Health Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***********Accident and Health Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -311,11 +323,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********Blanket Accident/Liability Link Results***********")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********Blanket Accident/Liability Link Results***********")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********Blanket Accident/Liability Link Results***********")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -372,11 +390,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("************Business Accident Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("************Business Accident Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("************Business Accident Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -433,11 +457,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*********Group & Individual AD&D Link Results*************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*********Group & Individual AD&D Link Results*************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*********Group & Individual AD&D Link Results*************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -494,11 +524,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*************Travel Insurance Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*************Travel Insurance Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*************Travel Insurance Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -555,11 +591,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("************Aviation & Aerospace Link Results*************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("************Aviation & Aerospace Link Results*************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("************Aviation & Aerospace Link Results*************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -616,11 +658,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********Commerical General Casualty Link Results**********")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********Commerical General Casualty Link Results**********")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********Commerical General Casualty Link Results**********")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -677,11 +725,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********Construction Primary & Excess Link Results*********")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********Construction Primary & Excess Link Results*********")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********Construction Primary & Excess Link Results*********")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -738,11 +792,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("************Contractor Pollution Link Results*************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("************Contractor Pollution Link Results*************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("************Contractor Pollution Link Results*************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -799,11 +859,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("**************Crisis Management Link Results**************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("**************Crisis Management Link Results**************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("**************Crisis Management Link Results**************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -860,11 +926,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********************Cyber Link Results********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********************Cyber Link Results********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********************Cyber Link Results********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -921,11 +993,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***************Defense Base Act Link Results**************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***************Defense Base Act Link Results**************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************Defense Base Act Link Results**************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -982,11 +1060,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******Energy Primary & Excess Casualty Link Results*******")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******Energy Primary & Excess Casualty Link Results*******")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******Energy Primary & Excess Casualty Link Results*******")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1043,11 +1127,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Environmental Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Environmental Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Environmental Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1104,11 +1194,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("**********Federal-Employee-Liability Link Results*********")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Environmental Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Environmental Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1167,11 +1263,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Financial Lines Link Results**************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Financial Lines Link Results**************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Financial Lines Link Results**************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1230,11 +1332,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Political Risk Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Political Risk Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Political Risk Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1293,11 +1401,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("************Professional Liability Link Results***********")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("************Professional Liability Link Results***********")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("************Professional Liability Link Results***********")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1356,11 +1470,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******Risk Management General Casualty Link Results******")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******Risk Management General Casualty Link Results******")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******Risk Management General Casualty Link Results******")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1419,11 +1539,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***************Site Pollution Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***************Site Pollution Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************Site Pollution Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1482,11 +1608,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("**Workers Compensation & Employer Liability Link Results**")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("**Workers Compensation & Employer Liability Link Results**")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("**Workers Compensation & Employer Liability Link Results**")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1543,11 +1675,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Inland Marine Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Inland Marine Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Inland Marine Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1604,11 +1742,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******************Marine Link Results********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******************Marine Link Results********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******************Marine Link Results********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1665,11 +1809,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("**************General Property Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("**************General Property Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("**************General Property Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1726,11 +1876,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***************Technical Risks Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***************Technical Risks Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************Technical Risks Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1787,11 +1943,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Builders Risk Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Builders Risk Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Builders Risk Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1848,11 +2010,17 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Builders Risk Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Inland Marine Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Inland Marine Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1874,7 +2042,7 @@ def test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult):
 
     # Print Results Of Test Script
     print("##########################################")
-    print("########### Overall Test Results #########")
+    print("########## Products Test Results #########")
     print("##########################################")
     print("Number of Pass Results: " + str(testsPass))
     print("Number of Fail Results: " + str(testsFail))
@@ -1921,11 +2089,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("************Aviation & Aerospace Link Results*************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("************Aviation & Aerospace Link Results*************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("************Aviation & Aerospace Link Results*************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -1981,11 +2155,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("**************Business Travel Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("**************Business Travel Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("**************Business Travel Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2041,11 +2221,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Construction Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Construction Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Construction Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2101,11 +2287,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******************Energy Link Results********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******************Energy Link Results********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******************Energy Link Results********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2161,11 +2353,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Environmental Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Environmental Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Environmental Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2221,11 +2419,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***************Food & Beverage Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***************Food & Beverage Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************Food & Beverage Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2283,11 +2487,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***********Government Contractors Link Results************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***********Government Contractors Link Results************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***********Government Contractors Link Results************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2345,11 +2555,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Hospitality Link Results******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Hospitality Link Results******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Hospitality Link Results******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2407,11 +2623,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************Manufacturing Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************Manufacturing Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************Manufacturing Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2469,11 +2691,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********************Marine Link Results*******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********************Marine Link Results*******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********************Marine Link Results*******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2531,11 +2759,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Real Estate Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Real Estate Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Real Estate Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2593,11 +2827,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********************Retail Link Results*******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********************Retail Link Results*******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********************Retail Link Results*******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2648,11 +2888,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("********************Travel Link Results*******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("********************Travel Link Results*******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("********************Travel Link Results*******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2668,6 +2914,9 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
         testsFail += 1
     elif speedTestResult == "Warning":
         testsWarning += 1
+
+    # Reset Page
+    driver.find_element(By.CSS_SELECTOR, "#header > header > div.main-nav > a > img").click()
 
     # Wait
     driver.implicitly_wait(15)
@@ -2704,11 +2953,17 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******************View All Link Results******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******************View All Link Results******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******************View All Link Results******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2730,7 +2985,7 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
 
     # Print Results Of Test Script
     print("##########################################")
-    print("########### Overall Test Results #########")
+    print("########## Industry Test Results #########")
     print("##########################################")
     print("Number of Pass Results: " + str(testsPass))
     print("Number of Fail Results: " + str(testsFail))
@@ -2774,11 +3029,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("**************Starr Agent/Broker Link Results*************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("**************Starr Agent/Broker Link Results*************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("**************Starr Agent/Broker Link Results*************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2836,11 +3097,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******************Domestic Link Results******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******************Domestic Link Results******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******************Domestic Link Results******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2904,11 +3171,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("****************International Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("****************International Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("****************International Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -2971,11 +3244,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Star Assist Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Star Assist Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Star Assist Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3032,11 +3311,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Global Reach Link Results****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Global Reach Link Results****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Global Reach Link Results****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3091,11 +3376,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("******************Who We Are Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("******************Who We Are Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("******************Who We Are Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3150,11 +3441,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*******************History Link Results*******************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*******************History Link Results*******************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*******************History Link Results*******************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3206,11 +3503,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("******************Leadership Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("******************Leadership Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("******************Leadership Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3262,11 +3565,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*****************Investments Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*****************Investments Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*****************Investments Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3318,11 +3627,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("***************Client Services Link Results***************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("***************Client Services Link Results***************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("***************Client Services Link Results***************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3373,11 +3688,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("******************Contact Us Link Results*****************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("******************Contact Us Link Results*****************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("******************Contact Us Link Results*****************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3428,11 +3749,17 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Record Results
     testTime = (testEnd - testStart)
-    print("*********************News Link Results********************")
-    print("URL Test Result: " + str(testResult))
-    print("Speed Test Result: " + str(speedTestResult))
-    print(testNotes)
-    print("**********************************************************")
+
+    if testResult == "Fail":
+        print("*********************News Link Results********************")
+        print("URL Test Result: " + str(testResult))
+        print("**********************************************************")
+
+    if speedTestResult == "Warning":
+        print("*********************News Link Results********************")
+        print("Speed Test Result: " + str(speedTestResult))
+        print(testNotes)
+        print("**********************************************************")
 
     # Record Results To Tally For Final Results
     if testResult == "Pass":
@@ -3454,7 +3781,7 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     # Print Results Of Test Script
     print("##########################################")
-    print("########### Overall Test Results #########")
+    print("######### Remainder Test Results #########")
     print("##########################################")
     print("Number of Pass Results: " + str(testsPass))
     print("Number of Fail Results: " + str(testsFail))
@@ -3473,8 +3800,8 @@ def test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 ####################################################################################################
 
 test_starrHomePage (testsPass,testsFail, testsWarning, testResult)
-#test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult)
-#test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult)
+test_headerNavLinksProducts (testsPass,testsFail, testsWarning, testResult)
+test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult)
 test_headerNavLinksRemainder (testsPass,testsFail, testsWarning, testResult)
 
     #Test is complete
