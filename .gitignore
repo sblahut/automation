@@ -10,12 +10,14 @@
 /traffic_sign_detection/Meta
 /traffic_sign_detection/Test
 /traffic_sign_detection/Train
+/React
 #/Starr
 # Removed uneeded project files
 #*.key
 #*.png
 #*.txt
 #*.png
+/.vscode/launch.json
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,windows
 
