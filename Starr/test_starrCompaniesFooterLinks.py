@@ -102,6 +102,7 @@ def test_starrHomePage (testsPass, testsFail, testsWarning, testResult):
     ############################################################################################
 
 def test_starrFooterLinks (testsPass, testsFail, testsWarning, testResult):
+    print('....Checking Footer Links....')
 
     # Timestamp: Start Test
     testStart = datetime.now()
@@ -743,6 +744,13 @@ def test_starrFooterLinks (testsPass, testsFail, testsWarning, testResult):
     elif speedTestResult == "Warning":
         testsWarning += 1
 
+    # Wait
+    driver.implicitly_wait(15)
+
+    ############################################################################################
+    #                                     END TEST CASE #10                                    #
+    ############################################################################################
+
     # Print Results Of Test Script
     print("##########################################")
     print("####### Footer Links Test Results ########")
@@ -755,19 +763,12 @@ def test_starrFooterLinks (testsPass, testsFail, testsWarning, testResult):
     print("############## Test Complete #############")
     print("##########################################")
 
-    # Wait
-    driver.implicitly_wait(15)
-
-    ############################################################################################
-    #                                     END TEST CASE #10                                    #
-    ############################################################################################
-
     ############################################################################################
     #                                   START TEST CASE #11                                    #
     ############################################################################################
 
 def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult):
-
+    print('....Checking International Links....')
     # Timestamp: Start Test
     testStart = datetime.now()
 
@@ -1549,7 +1550,6 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     ############################################################################################
     #                                     END TEST CASE #21                                    #
     ############################################################################################
-
 
     # Print Results Of Test Script
     print("##########################################")
