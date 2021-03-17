@@ -23,6 +23,8 @@ Time: https://pypi.org/project/times/<br>
 Pip: https://pypi.org/project/pip/#files<br>
 Selenium: https://pypi.org/project/selenium/#files<br>
 Beautiful Soup: https://pypi.org/project/beautifulsoup4/<br>
+Keyboard: https://pypi.org/project/keyboard/<br>
+Pynput: https://pypi.org/project/pynput/<br>
 Open CV: https://pypi.org/project/opencv-python/<br>
 Numpy: https://pypi.org/project/numpy/<br>
 Cryptography: https://pypi.org/project/cryptography/<br>
@@ -39,17 +41,17 @@ Skern/Scikit-Learn: https://pypi.org/project/sklearn/ / https://pypi.org/project
 
 <b>Projects</b>
 
-AB: AEM Migration - Validation Scripts<br>
-ABC: AmerisourceBergen - Automation Test Suite<br>
+AB: Validation Scripts<br>
+ABC: Automation Test Suite<br>
 anomaly_detection - Offset Data Detection (Ghost Detection)<br>
 anpr_detection - Automatic Number Plate Recognition (License Plate Recognition - (Webcam/Video/Image))<br>
 drowsy_driver_detector - Drowsy Driver Detector - Will trigger an alarm when your eyes close for a specific amount of time.<br>
-ASH: American Society of Hematology - Automation Test Suite<br>
+ASH: Automation Test Suite<br>
 encryption-decryption - Encryption/Decryption Script (.csv/password strings)<br>
 facial_detection - Detects if there are faces in a (Webcam/Video/Image)<br>
 traffic_sign_detection - Detects which traffic sign it is in a (Webcam/Video/Image)<br>
 Geekhive - Automation Test Suite<br>
-Starr - Coming Soon...<br>
+Starr - Automation Test Suite<br>
 
 <b>Contributors</b>
 

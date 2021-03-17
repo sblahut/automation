@@ -4,6 +4,7 @@
 
 import time
 import requests
+from pynput.keyboard import Key, Controller
 from itertools import islice
 from bs4 import BeautifulSoup
 from datetime import datetime
@@ -503,14 +504,22 @@ def test_searchHomepage (testsPass,testsFail, testsWarning, testResult):
     #                                    START TEST CASE #7                                    #
     ############################################################################################
 
-    print('....Checking the ability to search for special charaters....')
+    print('....Testing the ability to search for special charaters without redirect or crash....')
 
     # Open search
     driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
     search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
     print('....Searching for !@#$%^....')
     search.send_keys('!@#$%^')
-    driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+
+    # Pressing and releasing enter from the search box
+    print('....Testing the ability to hit enter from after typing...')
+    keyboard = Controller()
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
+    time.sleep(2)
+
+    #driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
 
     # Timestamp: Start Test
     testStart = datetime.now()
@@ -579,7 +588,6 @@ def test_searchHomepage (testsPass,testsFail, testsWarning, testResult):
     ############################################################################################
     #                                     END TEST CASE #7                                     #
     ############################################################################################
-
 
     # Print Results Of Test Script
     print("                                          ")
