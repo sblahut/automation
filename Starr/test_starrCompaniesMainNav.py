@@ -2936,7 +2936,7 @@ def test_headerNavLinksIndustry (testsPass,testsFail, testsWarning, testResult):
     # Open Nav and navigate to View All
     driver.find_element(By.CSS_SELECTOR, "#link-group-0 > a").click()
     driver.find_element(By.CSS_SELECTOR, "#link-group-0 > div > ul > li:nth-child(3) > a").click()  
-    expectedURL = StarrEnvironmentLink + "View-All"
+    expectedURL = StarrEnvironmentLink + "Insurance/View-All"
 
     if driver.current_url == expectedURL:
         testResult = "Pass"
