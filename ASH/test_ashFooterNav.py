@@ -74,11 +74,17 @@ elif speedTestResult == "Warning":
 
 # Record Results
 testTime = (testEnd - testStart)
-print("********************Homepage Results**********************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("********************Homepage Results**********************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("********************Homepage Results**********************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Set Window Size
 driver.maximize_window()
@@ -123,11 +129,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("*****************Facebook Link Results********************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("*****************Facebook Link Results********************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("*****************Facebook Link Results********************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -184,11 +196,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("*****************LinkedIn Link Results********************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("*****************LinkedIn Link Results********************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("*****************LinkedIn Link Results********************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -245,11 +263,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("******************Twitter Link Results********************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("******************Twitter Link Results********************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("******************Twitter Link Results********************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -306,11 +330,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("******************YouTube Link Results********************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("******************YouTube Link Results********************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("******************YouTube Link Results********************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -367,11 +397,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("***********Support Opportunities Link Results*************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("***********Support Opportunities Link Results*************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("***********Support Opportunities Link Results*************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -431,11 +467,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("***************Privacy Policy Link Results****************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("***************Privacy Policy Link Results****************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("***************Privacy Policy Link Results****************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -495,11 +537,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("**************Terms of Service Link Results***************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("**************Terms of Service Link Results***************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("**************Terms of Service Link Results***************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
@@ -559,11 +607,17 @@ else:
 
 # Record Results
 testTime = (testEnd - testStart)
-print("*****************Contact Us Link Results******************")
-print("URL Test Result: " + str(testResult))
-print("Speed Test Result: " + str(speedTestResult))
-print(testNotes)
-print("**********************************************************")
+
+if testResult == "Fail":
+    print("*****************Contact Us Link Results******************")
+    print("URL Test Result: " + str(testResult))
+    print("**********************************************************")
+
+if speedTestResult == "Warning":
+    print("*****************Contact Us Link Results******************")
+    print("Speed Test Result: " + str(speedTestResult))
+    print(testNotes)
+    print("**********************************************************")
 
 # Record Results To Tally For Final Results
 if testResult == "Pass":
