@@ -62,11 +62,11 @@ def test_allAshLinks():
             req = requests.head(link)
             print("_____ Link: " + link + " _____ Status Code: _____ ", req.status_code)
 
-
+        #### USE CASE FOR OTHER PREFIXES ####
         # If condition is met: run status code
-        elif link.startswith("http://www.hematology.org/"):
-            req = requests.head(link)
-            print("_____ Link: " + link + " _____ Status Code: _____ ", req.status_code)
+        #elif link.startswith("http://www.hematology.org/"):
+        #    req = requests.head(link)
+        #    print("_____ Link: " + link + " _____ Status Code: _____ ", req.status_code)
 
 
         # Ignore if previous conditions are not met
