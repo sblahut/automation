@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class TestFooterLinks(unittest.TestCase):
+class TestMainNavLinks(unittest.TestCase):
     
     def setUp(self):
         options = webdriver.ChromeOptions() 

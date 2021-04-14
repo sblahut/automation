@@ -28,9 +28,6 @@ class TestFooterLinks(unittest.TestCase):
         self.driver.quit()
 
     def test_starrHomePage (self):
- 
-        # Loading message
-        print("....Checking Starr Companies homepage....")
 
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -135,7 +132,7 @@ class TestFooterLinks(unittest.TestCase):
     ############################################################################################
 
     def test_complianceAndEthicsLink (self):
-        print('....Checking Footer Links....')    
+
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
         expectedPageLoadTimeInSeconds = 10
@@ -421,7 +418,7 @@ class TestFooterLinks(unittest.TestCase):
 
         # Wait
         driver.implicitly_wait(15)
-        print('....Footer Links Complete....')
+
     ############################################################################################
     #                                     END TEST CASE #10                                    #
     ############################################################################################
@@ -432,7 +429,7 @@ class TestFooterLinks(unittest.TestCase):
     ############################################################################################
 
     def test_unitedKingdomLink (self):
-        print('....Checking International Links....')
+
         driver = self.driver
         expectedPageLoadTimeInSeconds = 10
 
@@ -900,7 +897,7 @@ class TestFooterLinks(unittest.TestCase):
 
         # Wait
         driver.implicitly_wait(15)
-        print('....International Links Complete....') 
+
     ############################################################################################
     #                                     END TEST CASE #21                                    #
     ############################################################################################
