@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class TestSearch(unittest.TestCase):
+class TestFooterLinks(unittest.TestCase):
     
     def setUp(self):
         options = webdriver.ChromeOptions() 
@@ -30,7 +30,7 @@ class TestSearch(unittest.TestCase):
     def test_starrHomePage (self):
  
         # Loading message
-        print("....Navigating to the Starr Companies homepage...")
+        print("....Checking Starr Companies homepage....")
 
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -98,125 +98,69 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #2                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_careersLink (self):
+        
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Careers Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(1) > a").click()
-    expectedURL = StarrEnvironmentLink + "Careers"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Careers Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(1) > a").click()
+        expectedURL = StarrEnvironmentLink + "Careers"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("******************Careers Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("******************Careers Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #2                                    #
     ############################################################################################
-
+    
     ############################################################################################
     #                                    START TEST CASE #3                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_complianceAndEthicsLink (self):
+        print('....Checking Footer Links....')    
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Confidentiality Protocol Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(2) > a").click()
-    expectedURL = StarrEnvironmentLink + "Confidentiality-Protocol"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Compliance and Ethics Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(2) > a").click()
+        expectedURL = StarrEnvironmentLink + "Compliance-and-Ethics"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("**********Confidentiality Protocol Link Results***********")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("**********Confidentiality Protocol Link Results***********")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #3                                    #
@@ -226,61 +170,33 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #4                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_termsOfUseLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Terms of Use Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(3) > a").click()
-    expectedURL = StarrEnvironmentLink + "Terms-of-Use"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Terms of Use Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(3) > a").click()
+        expectedURL = StarrEnvironmentLink + "Terms-of-Use"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("****************Terms of Use Link Results*****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("****************Terms of Use Link Results*****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #4                                    #
@@ -290,61 +206,33 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #5                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_disclaimersLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Disclaimers Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(4) > a").click()
-    expectedURL = StarrEnvironmentLink + "Disclaimers"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Disclaimers Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(4) > a").click()
+        expectedURL = StarrEnvironmentLink + "Disclaimers"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("****************Disclaimers Link Results******************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("****************Disclaimers Link Results******************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #5                                    #
@@ -354,61 +242,33 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #6                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_legalNoticeLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Legal Notice Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(5) > a").click()
-    expectedURL = StarrEnvironmentLink + "Legal-Notice"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Legal Notice Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(5) > a").click()
+        expectedURL = StarrEnvironmentLink + "Legal-Notice"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("****************Legal Notice Link Results*****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("****************Legal Notice Link Results*****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #6                                    #
@@ -418,61 +278,33 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #7                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_privacyPolicyLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Privacy Policy Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(6) > a").click()
-    expectedURL = StarrEnvironmentLink + "Privacy-Policy"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Privacy Policy Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__links > div:nth-child(6) > a").click()
+        expectedURL = StarrEnvironmentLink + "Privacy-Policy"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("***************Privacy Policy Link Results****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("***************Privacy Policy Link Results****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #7                                    #
@@ -482,69 +314,41 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #8                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_getInTouchLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Get in Touch Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.contact-us-cta.contact-us-cta--dark > div > div.contact-us-cta__button-wrapper > a").click()
-    driver.implicitly_wait(15)
-    driver.switch_to.window(driver.window_handles[1])
-    expectedURL = StarrEnvironmentLink + "Contact-Us"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Get in Touch Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.contact-us-cta.contact-us-cta--dark > div > div.contact-us-cta__button-wrapper > a").click()
+        driver.implicitly_wait(15)
+        driver.switch_to.window(driver.window_handles[1])
+        expectedURL = StarrEnvironmentLink + "Contact-Us"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("****************Get in Touch Link Results*****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("****************Get in Touch Link Results*****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Close Tab
+        driver.close()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Close Tab
-    driver.close()
-
-    # Switch Back To First Tab
-    driver.switch_to.window(driver.window_handles[0])
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #8                                    #
@@ -554,61 +358,33 @@ class TestSearch(unittest.TestCase):
     #                                    START TEST CASE #9                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_claimLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Click Report a Claim Link
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(2)").click()
-    expectedURL = StarrEnvironmentLink + "Client-Services/Claims"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Click Report a Claim Link
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(2)").click()
+        expectedURL = StarrEnvironmentLink + "Client-Services/Claims"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("***************Report a Claim Link Results****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("***************Report a Claim Link Results****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                      END TEST CASE #9                                    #
@@ -618,154 +394,81 @@ class TestSearch(unittest.TestCase):
     #                                   START TEST CASE #10                                    #
     ############################################################################################
 
-    # Reset Page
-    driver.find_element(By.CSS_SELECTOR, "#header > header > div.main-nav > a > img").click()
+    def test_viewAllNewsLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Click View All News Link
-    driver.find_element(By.CSS_SELECTOR, "#content > div.newsfeed > div.newsfeed__view-all-container > div > a").click()
-    expectedURL = StarrEnvironmentLink + "News"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Click View All News Link
+        driver.find_element(By.CSS_SELECTOR, "#content > div.newsfeed > div.newsfeed__view-all-container > div > a").click()
+        expectedURL = StarrEnvironmentLink + "News"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if testResult == "Fail":
-        print("***************View All News Link Results*****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
-
-    if speedTestResult == "Warning":
-        print("***************View All News Link Results*****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Wait
-    driver.implicitly_wait(15)
-
+        # Wait
+        driver.implicitly_wait(15)
+        print('....Footer Links Complete....')
     ############################################################################################
     #                                     END TEST CASE #10                                    #
     ############################################################################################
-
-    # Print Results Of Test Script
-    print("##########################################")
-    print("####### Footer Links Test Results ########")
-    print("##########################################")
-    print("Number of Pass Results: " + str(testsPass))
-    print("Number of Fail Results: " + str(testsFail))
-    print("Number of Warnings: " + str(testsWarning))
-    print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
-    print("##########################################")
-    print("############## Test Complete #############")
-    print("##########################################")
-
+    
+    
     ############################################################################################
     #                                   START TEST CASE #11                                    #
     ############################################################################################
 
-def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult):
-    print('....Checking International Links....')
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_unitedKingdomLink (self):
+        print('....Checking International Links....')
+        driver = self.driver
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click United Kingdom
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(1) > a").click()
-    driver.implicitly_wait(15)
-    driver.switch_to.window(driver.window_handles[1])
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Split Google Analytics URL to validate
-    newURL = driver.current_url.rsplit("?", 1)[0]
-    expectedURL = "https://starrcompanies.co.uk/"
-    
-    if newURL == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Open menu and click United Kingdom
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(1) > a").click()
+        driver.implicitly_wait(15)
+        driver.switch_to.window(driver.window_handles[1])
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Split Google Analytics URL to validate
+        newURL = driver.current_url.rsplit("?", 1)[0]
+        expectedURL = "https://starrcompanies.co.uk/"
+        self.assertEqual(newURL, expectedURL)
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    if testResult == "Fail":
-        print("***************United Kingdom Link Results****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Warning":
-        print("***************United Kingdom Link Results****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Close Tab
+        driver.close()
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
 
-    # Close Tab
-    driver.close()
-
-    # Switch Back To First Tab
-    driver.switch_to.window(driver.window_handles[0])
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #11                                    #
@@ -774,74 +477,45 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     ############################################################################################
     #                                   START TEST CASE #12                                    #
     ############################################################################################
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    # Open menu and click Brazil
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(2) > a").click()
-    driver.implicitly_wait(15)
-    driver.switch_to.window(driver.window_handles[1])
-
-    # Split Google Analytics URL to validate
-    newURL = driver.current_url.rsplit("?", 1)[0]
-    expectedURL = "https://www.starrcompanies.com.br/"
     
-    if newURL == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+    def test_brazilLink (self):
+            
+        driver = self.driver
+        expectedPageLoadTimeInSeconds = 10
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Open menu and click Brazil
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(2) > a").click()
+        driver.implicitly_wait(15)
+        driver.switch_to.window(driver.window_handles[1])
 
-    if testResult == "Fail":
-        print("*******************Brazil Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Split Google Analytics URL to validate
+        newURL = driver.current_url.rsplit("?", 1)[0]
+        expectedURL = "https://www.starrcompanies.com.br/"
+        self.assertEqual(newURL, expectedURL)
 
-    if speedTestResult == "Warning":
-        print("*******************Brazil Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Close Tab
-    driver.close()
+        # Close Tab
+        driver.close()
 
-    # Switch Back To First Tab
-    driver.switch_to.window(driver.window_handles[0])
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
 
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #12                                    #
@@ -850,74 +524,45 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     ############################################################################################
     #                                   START TEST CASE #13                                    #
     ############################################################################################
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    # Open menu and click Chile
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(3) > a").click()
-    driver.implicitly_wait(15)
-    driver.switch_to.window(driver.window_handles[1])
-
-    # Split Google Analytics URL to validate
-    newURL = driver.current_url.rsplit("?", 1)[0]
-    expectedURL = "http://www.starrcompanies.cl/"
     
-    if newURL == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+    def test_chileLink (self):
+            
+        driver = self.driver
+        expectedPageLoadTimeInSeconds = 10
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Open menu and click Chile
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(3) > a").click()
+        driver.implicitly_wait(15)
+        driver.switch_to.window(driver.window_handles[1])
 
-    if testResult == "Fail":
-        print("********************Chile Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Split Google Analytics URL to validate
+        newURL = driver.current_url.rsplit("?", 1)[0]
+        expectedURL = "http://www.starrcompanies.cl/"
+        self.assertEqual(newURL, expectedURL)
 
-    if speedTestResult == "Warning":
-        print("********************Chile Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Close Tab
-    driver.close()
+        # Close Tab
+        driver.close()
 
-    # Switch Back To First Tab
-    driver.switch_to.window(driver.window_handles[0])
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
 
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #13                                    #
@@ -926,74 +571,45 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     ############################################################################################
     #                                   START TEST CASE #14                                    #
     ############################################################################################
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    # Open menu and click China
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(4) > a").click()
-    driver.implicitly_wait(15)
-    driver.switch_to.window(driver.window_handles[1])
-
-    # Split Google Analytics URL to validate
-    newURL = driver.current_url.rsplit("?", 1)[0]
-    expectedURL = "http://www.starrchina.cn/"
     
-    if newURL == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+    def test_chinaLink (self):
+            
+        driver = self.driver
+        expectedPageLoadTimeInSeconds = 10
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Open menu and click China
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(4) > a").click()
+        driver.implicitly_wait(15)
+        driver.switch_to.window(driver.window_handles[1])
 
-    if testResult == "Fail":
-        print("********************China Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Split Google Analytics URL to validate
+        newURL = driver.current_url.rsplit("?", 1)[0]
+        expectedURL = "https://www.starrchina.cn/"
+        self.assertEqual(newURL, expectedURL)
 
-    if speedTestResult == "Warning":
-        print("********************China Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Close Tab
-    driver.close()
+        # Close Tab
+        driver.close()
 
-    # Switch Back To First Tab
-    driver.switch_to.window(driver.window_handles[0])
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
 
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #14                                    #
@@ -1002,69 +618,43 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     ############################################################################################
     #                                   START TEST CASE #15                                    #
     ############################################################################################
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    # Open menu and click Japan
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(5) > a").click()
-
-    # Split Google Analytics URL to validate
-    newURL = driver.current_url.rsplit("?", 1)[0]
-    expectedURL = "http://www.starrcompanies.jp/"
     
-    if newURL == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+    def test_japanLink (self):
+            
+        driver = self.driver
+        expectedPageLoadTimeInSeconds = 10
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Open menu and click Japan
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(5) > a").click()
 
-    if testResult == "Fail":
-        print("********************Japan Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Split Google Analytics URL to validate
+        newURL = driver.current_url.rsplit("?", 1)[0]
+        expectedURL = "http://www.starrcompanies.jp/"
+        self.assertEqual(newURL, expectedURL)
 
-    if speedTestResult == "Warning":
-        print("********************Japan Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Go back
-    driver.back()
+        # Close Tab
+        driver.close()
 
-    # Wait
-    driver.implicitly_wait(15)
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
+
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #15                                    #
@@ -1074,68 +664,42 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     #                                   START TEST CASE #16                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_hongkongLink (self):
+            
+        driver = self.driver
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click Hong Kong
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(6) > a").click()
+        # Wait
+        driver.implicitly_wait(15)
 
-    # Split Google Analytics URL to validate
-    newURL = driver.current_url.rsplit("?", 1)[0]
-    expectedURL = "https://www.starrinsurance.com.hk/"
-    
-    if newURL == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Open menu and click Hong Kong
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(6) > a").click()
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Split Google Analytics URL to validate
+        newURL = driver.current_url.rsplit("?", 1)[0]
+        expectedURL = "https://www.starrinsurance.com.hk/"
+        self.assertEqual(newURL, expectedURL)
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    if testResult == "Fail":
-        print("******************Hong Kong Link Results******************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Warning":
-        print("******************Hong Kong Link Results******************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Close Tab
+        driver.close()
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
 
-    # Go back
-    driver.back()
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #16                                    #
@@ -1145,65 +709,37 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     #                                   START TEST CASE #17                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_argentinaLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click Argentina
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(7) > a").click()
-    expectedURL = StarrEnvironmentLink + "Country-Pages/Argentina"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Open menu and click Argentina
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(7) > a").click()
+        expectedURL = StarrEnvironmentLink + "Country-Pages/Argentina"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("******************Argentina Link Results******************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("******************Argentina Link Results******************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Go back
+        driver.back()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Go back
-    driver.back()
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #17                                    #
@@ -1213,65 +749,37 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     #                                   START TEST CASE #18                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_asiaLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click Asia
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(8) > a").click()
-    expectedURL = StarrEnvironmentLink + "Country-Pages/Asia"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Open menu and click Asia
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(8) > a").click()
+        expectedURL = StarrEnvironmentLink + "Country-Pages/Asia"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("*********************Asia Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("*********************Asia Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Go back
+        driver.back()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Go back
-    driver.back()
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #18                                    #
@@ -1281,65 +789,37 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     #                                   START TEST CASE #19                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_maltaLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click Malta
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(9) > a").click()
-    expectedURL = StarrEnvironmentLink + "Country-Pages/Malta"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Open menu and click Malta
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(9) > a").click()
+        expectedURL = StarrEnvironmentLink + "Country-Pages/Malta"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("********************Malta Link Results********************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("********************Malta Link Results********************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Go back
+        driver.back()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Go back
-    driver.back()
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #19                                    #
@@ -1349,65 +829,37 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     #                                   START TEST CASE #20                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_philippinesLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click Philippines
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(10) > a").click()
-    expectedURL = StarrEnvironmentLink + "Country-Pages/Philippines"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Open menu and click Philippines
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(10) > a").click()
+        expectedURL = StarrEnvironmentLink + "Country-Pages/Philippines"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if testResult == "Fail":
-        print("*****************Philippines Link Results*****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    if speedTestResult == "Warning":
-        print("*****************Philippines Link Results*****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        # Go back
+        driver.back()
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
-
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Go back
-    driver.back()
-
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #20                                    #
@@ -1417,89 +869,46 @@ def test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult
     #                                   START TEST CASE #21                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
+    def test_singaporeLink (self):
+            
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        expectedPageLoadTimeInSeconds = 10
 
-    # Open menu and click Singapore
-    driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
-    driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(11) > a").click()
-    expectedURL = StarrEnvironmentLink + "Country-Pages/Singapore"
+        # Wait
+        driver.implicitly_wait(15)
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-    else:
-        testResult = "Fail"
-        
-     # Timestamp: End Test
-    testEnd = datetime.now()
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Open menu and click Singapore
+        driver.find_element(By.CSS_SELECTOR, "#footer > footer > div.footer__buttons > a:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR, "#FooterCountries > div:nth-child(11) > a").click()
+        expectedURL = StarrEnvironmentLink + "Country-Pages/Singapore"
+        self.assertEqual(driver.current_url, expectedURL)
 
-    # Record Results
-    testTime = (testEnd - testStart)
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-    if testResult == "Fail":
-        print("******************Singapore Link Results******************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Record Results
+        testTime = (testEnd - testStart)
 
-    if speedTestResult == "Warning":
-        print("******************Singapore Link Results******************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
-    # Record Results To Tally For Final Results
-    if testResult == "Pass":
-        testsPass += 1
-    elif testResult == "Fail":
-        testsFail += 1
-    elif testResult == "Warning":
-        testsWarning += 1
+        # Go back
+        driver.back()
 
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Go back
-    driver.back()
-
-    # Wait
-    driver.implicitly_wait(15)
-
+        # Wait
+        driver.implicitly_wait(15)
+        print('....International Links Complete....') 
     ############################################################################################
     #                                     END TEST CASE #21                                    #
     ############################################################################################
-
-    # Print Results Of Test Script
-    print("##########################################")
-    print("#### International Links Test Results ####")
-    print("##########################################")
-    print("Number of Pass Results: " + str(testsPass))
-    print("Number of Fail Results: " + str(testsFail))
-    print("Number of Warnings: " + str(testsWarning))
-    print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
-    print("##########################################")
-    print("############## Test Complete #############")
-    print("##########################################")
-
+     
 ####################################################################################################
 #                                        END FOOTER LINKS                                          #
 ####################################################################################################
 
-test_starrHomePage (testsPass, testsFail, testsWarning, testResult)
-test_starrFooterLinks (testsPass, testsFail, testsWarning, testResult)
-test_starrInternationalLinks (testsPass, testsFail, testsWarning, testResult)
     #Test is complete
 
 ################################################################################################
