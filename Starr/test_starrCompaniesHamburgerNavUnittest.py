@@ -1112,7 +1112,7 @@ class TestHamburgerNavLinks(unittest.TestCase):
     #                                   START TEST CASE #28                                    #
     ############################################################################################
 
-    def test_aviationAndAerospaceLink (self):
+    def test_insuranceAviationAndAerospaceLink (self):
             
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -1580,7 +1580,7 @@ class TestHamburgerNavLinks(unittest.TestCase):
     #                                   START TEST CASE #40                                    #
     ############################################################################################
 
-    def test_travelInsuranceLink (self):
+    def test_accidentTravelInsuranceLink (self):
             
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -1787,7 +1787,7 @@ class TestHamburgerNavLinks(unittest.TestCase):
     #                                   START TEST CASE #45                                    #
     ############################################################################################
 
-    def test_internationalLink (self):
+    def test_starrAssistLink (self):
             
         driver = self.driver
         expectedPageLoadTimeInSeconds = 10
@@ -2133,7 +2133,7 @@ class TestHamburgerNavLinks(unittest.TestCase):
     #                                   START TEST CASE #54                                    #
     ############################################################################################
 
-    def test_newsLink (self):
+    def test_careersLink (self):
             
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
