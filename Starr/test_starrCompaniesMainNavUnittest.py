@@ -1792,7 +1792,7 @@ class TestMainNavLinks(unittest.TestCase):
         driver.find_element(By.CSS_SELECTOR, "#link-group-1 > a").click()
         driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li:nth-child(2) > a").click()
         driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li.flyout-nav__list-item.flyout-nav__list-item--active > div > ul > li:nth-child(1) > a").click()
-        driver.implicitly_wait(300)
+        driver.implicitly_wait(15)
         driver.switch_to.window(driver.window_handles[1])
         expectedURL = "https://www.starrlink.com/signin"
         self.assertEqual(driver.current_url, expectedURL)
@@ -2205,11 +2205,11 @@ class TestMainNavLinks(unittest.TestCase):
 #                                        END HEADER LINKS                                          #
 ####################################################################################################
 
-    #Test is complete
+#Test is complete
+if __name__ == '__main__':
+    unittest.main()
 
 ################################################################################################
 ################ Starr Companies Site Automation Header Links Test Script ######################
 ################################################################################################
 
-if __name__ == '__main__':
-    unittest.main()
