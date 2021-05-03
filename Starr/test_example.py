@@ -1,16 +1,22 @@
 ################################################################################################
-################ Starr Companies Site Automation Hamburger Links Test Script ###################
+################# Starr Companies Site Automation Search Component Test Script #################
 ################################################################################################
 
 import time
+import requests
 import unittest
+from pynput.keyboard import Key, Controller
+from itertools import islice
+from bs4 import BeautifulSoup
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class TestHamburgerNavLinks(unittest.TestCase):
+class TestSearchComponent(unittest.TestCase):
+    
     def setUp(self):
         options = webdriver.ChromeOptions() 
         options.add_argument("start-maximized")
@@ -21,13 +27,15 @@ class TestHamburgerNavLinks(unittest.TestCase):
         self.driver.get("https://www.starrcompanies.com/")
         # Accept Cookies
         self.driver.find_element(By.CSS_SELECTOR, "body > div.privacy-warning.permisive > div.submit > a").click() 
-        self.driver.set_window_size(664, 620)
-        
+    
     # tearDown runs after each test case
     def tearDown(self):
         self.driver.quit()
 
     def test_starrHomePage (self):
+         
+        # Loading message
+        print("....Checking Starr Companies homepage....")
 
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -52,14 +60,14 @@ class TestHamburgerNavLinks(unittest.TestCase):
         self.assertGreaterEqual (expectedHomePageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))  
 
 ####################################################################################################
-#                                     START HAMBURGER LINKS                                        #
+#                                      START SEARCH COMPONENT                                      #
 ####################################################################################################
 
     ############################################################################################
     #                                    START TEST CASE #1                                    #
     ############################################################################################
 
-    def test_accidentAndHealthLink (self):
+    def test_searchTestCaseOne (self):
         
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -71,12 +79,15 @@ class TestHamburgerNavLinks(unittest.TestCase):
         # Timestamp: Start Test
         testStart = datetime.now()
 
-        # Open hamburger menu and select Accident and Health 
-        driver.find_element(By.CSS_SELECTOR, "#hamburger_icon").click()
-        driver.find_element(By.CSS_SELECTOR, "#link-group-0 > a").click()
-        driver.find_element(By.CSS_SELECTOR, "#header > header > section > section > nav.flyout-nav.flyout-nav--secondary > div > div > ul > li:nth-child(1) > a").click()
-        driver.find_element(By.CSS_SELECTOR, "#header > header > section > section > nav.flyout-nav.flyout-nav--tertiary > div > div > ul > li:nth-child(1) > div > ul > li:nth-child(1) > a").click()
-        expectedURL = StarrEnvironmentLink + "Insurance/Accident/Accident-and-Health"
+        # Open search
+        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
+        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
+        search.send_keys('TRAVEL')
+        driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+        
+
+
+        expectedURL = StarrEnvironmentLink + "search?term=TRAVEL"
         self.assertEqual(driver.current_url, expectedURL)
 
         # Timestamp: End Test
@@ -87,11 +98,22 @@ class TestHamburgerNavLinks(unittest.TestCase):
 
         self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
+        ids = driver.find_elements_by_class_name('search-results__result-title')
+
+        for id in islice(ids, 0, 1, 1):
+
+            result = (str(id.text))
+            
+            word = 'travel'
+
+            contains_word = word in result.lower()
+            
+            self.assertFalse(contains_word, "ALERT: Search is not functioning as expected!")
+
         # Wait
         driver.implicitly_wait(15)
-
     ############################################################################################
-    #                                      END TEST CASE #1                                    #
+    #                                     END TEST CASE #1                                     #
     ############################################################################################
 
 if __name__ == '__main__':
