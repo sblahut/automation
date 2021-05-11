@@ -1,5 +1,5 @@
 ################################################################################################
-################# Starr Companies Site Automation Search Component Test Script #################
+##################### EXAMPLE SINGLE TEST CASE SCRIPT FOR TESTING PURPOSES #####################
 ################################################################################################
 
 import time
@@ -32,89 +32,51 @@ class TestSearchComponent(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-    def test_starrHomePage (self):
-         
-        # Loading message
-        print("....Checking Starr Companies homepage....")
-
-        driver = self.driver
-        StarrEnvironmentLink = "https://www.starrcompanies.com/"
-        expectedHomePageLoadTimeInSeconds = 20
-
-        # Wait
-        driver.implicitly_wait(15)
-
-        # Timestamp: Start Test
-        testStart = datetime.now()
-
-        expectedURL = StarrEnvironmentLink
-        
-        self.assertEqual(driver.current_url, expectedURL)
-            
-        # Timestamp: End Test
-        testEnd = datetime.now()
-
-        # Record Results
-        testTime = (testEnd - testStart)
-        
-        self.assertGreaterEqual (expectedHomePageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))  
-
-####################################################################################################
-#                                      START SEARCH COMPONENT                                      #
-####################################################################################################
-
     ############################################################################################
     #                                    START TEST CASE #1                                    #
     ############################################################################################
 
-    def test_searchTestCaseOne (self):
+    def test_searchTestCaseSeven (self):
         
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
-        expectedPageLoadTimeInSeconds = 10
-
-        # Wait
-        driver.implicitly_wait(15)
-
-        # Timestamp: Start Test
-        testStart = datetime.now()
+        print('....Testing the ability to search for special charaters without redirect or crash....')
 
         # Open search
         driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
         search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
-        search.send_keys('TRAVEL')
-        driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
-        
+        search.send_keys('!@#$%^')
 
+        # Pressing and releasing enter from the search box
+        print('....Testing the ability to hit enter from after typing...')
+        keyboard = Controller()
+        keyboard.press(Key.enter)
+        keyboard.release(Key.enter)
+        time.sleep(2)
 
-        expectedURL = StarrEnvironmentLink + "search?term=TRAVEL"
+        #driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+
+        expectedURL = StarrEnvironmentLink + "search?term=%21%40%23%24%25%5E"
         self.assertEqual(driver.current_url, expectedURL)
 
-        # Timestamp: End Test
-        testEnd = datetime.now()
-
-        # Record Results
-        testTime = (testEnd - testStart)
-
-        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
-
-        ids = driver.find_elements_by_class_name('search-results__result-title')
+        # Run results
+        ids = driver.find_elements_by_class_name('search-results__no-results-text')
 
         for id in islice(ids, 0, 1, 1):
-
+        
             result = (str(id.text))
-            
-            word = 'travel'
-
-            contains_word = word in result.lower()
-            
-            self.assertFalse(contains_word, "ALERT: Search is not functioning as expected!")
-
+            self.assertEqual(result, "No Results", "ALERT: Search is not functioning as expected!")
+    
         # Wait
         driver.implicitly_wait(15)
+
     ############################################################################################
     #                                     END TEST CASE #1                                     #
     ############################################################################################
 
 if __name__ == '__main__':
     unittest.main()
+
+################################################################################################
+##################### EXAMPLE SINGLE TEST CASE SCRIPT FOR TESTING PURPOSES #####################
+################################################################################################

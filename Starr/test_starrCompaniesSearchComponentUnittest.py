@@ -33,9 +33,6 @@ class TestSearchComponent(unittest.TestCase):
         self.driver.quit()
 
     def test_starrHomePage (self):
-         
-        # Loading message
-        print("....Checking Starr Companies homepage....")
 
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -46,17 +43,14 @@ class TestSearchComponent(unittest.TestCase):
 
         # Timestamp: Start Test
         testStart = datetime.now()
-
-        expectedURL = StarrEnvironmentLink
-        
+        expectedURL = StarrEnvironmentLink    
         self.assertEqual(driver.current_url, expectedURL)
             
         # Timestamp: End Test
         testEnd = datetime.now()
 
         # Record Results
-        testTime = (testEnd - testStart)
-        
+        testTime = (testEnd - testStart)        
         self.assertGreaterEqual (expectedHomePageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))  
 
 ####################################################################################################
@@ -71,13 +65,6 @@ class TestSearchComponent(unittest.TestCase):
         
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
-        expectedPageLoadTimeInSeconds = 10
-
-        # Wait
-        driver.implicitly_wait(15)
-
-        # Timestamp: Start Test
-        testStart = datetime.now()
 
         # Open search
         driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
@@ -85,33 +72,12 @@ class TestSearchComponent(unittest.TestCase):
         search.send_keys('TRAVEL')
         driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
         
-
-
         expectedURL = StarrEnvironmentLink + "search?term=TRAVEL"
         self.assertEqual(driver.current_url, expectedURL)
 
-        # Timestamp: End Test
-        testEnd = datetime.now()
-
-        # Record Results
-        testTime = (testEnd - testStart)
-
-        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
-
-        ids = driver.find_elements_by_class_name('search-results__result-title')
-
-        for id in islice(ids, 0, 1, 1):
-
-            result = (str(id.text))
-            
-            word = 'travel'
-
-            contains_word = word in result.lower()
-            
-            self.assertFalse(contains_word, "ALERT: Search is not functioning as expected!")
-
         # Wait
         driver.implicitly_wait(15)
+
     ############################################################################################
     #                                     END TEST CASE #1                                     #
     ############################################################################################
@@ -120,34 +86,27 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #2                                    #
     ############################################################################################
 
-    # Switch to coverages
-    driver.find_element(By.CSS_SELECTOR, "#content > div.search-results > div > div.search-results__rightrail > a:nth-child(3)").click()
-    
-    # Added wait to ensure results are updated
-    time.sleep(2)
-    
-    # Run results
-    ids = driver.find_elements_by_class_name('search-results__result-title')
+    def test_searchTestCaseTwo (self):
 
-    for id in islice(ids, 0, 1, 1):
+        driver = self.driver
 
-        result = (str(id.text))
+        # Open search
+        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
+        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
+        search.send_keys('TRAVEL')
+        driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
         
-        word = 'travel'
-        word2 = 'insurance'
+        ids = driver.find_elements_by_class_name('search-results__result-title')
 
-        contains_words = word and word2 in result.lower()
-        
-        if contains_words == False:
-            print('ALERT: Search is not functioning correctly.')
-            testsFail += 1
-            break
-        else:
-            testsPass += 1
-            break
+        for id in islice(ids, 0, 1, 1):
 
-    # Wait
-    driver.implicitly_wait(15)
+            result = (str(id.text))           
+            word = 'travel'       
+            contains_word = word in result.lower()
+            self.assertTrue(contains_word, "ALERT: Search is not functioning as expected!")
+
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #2                                     #
@@ -157,57 +116,35 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #3                                    #
     ############################################################################################
 
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    # Click travel insurance link
-    driver.find_element(By.CSS_SELECTOR, "#content > div.search-results > div > div.search-results__results-wrapper > div.search-results__results > a > div.search-results__result-title").click()
+    def test_searchTestCaseThree (self):
     
-    expectedURL = StarrEnvironmentLink + "Insurance/Accident/Travel-Insurance"
+        driver = self.driver
 
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-        testsPass += 1
-    else:
-        testResult = "Fail"
-        testsFail += 1
+        # Open search
+        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
+        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
+        search.send_keys('TRAVEL')
+        driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+        
+        # Switch to coverages
+        driver.find_element(By.CSS_SELECTOR, "#content > div.search-results > div > div.search-results__rightrail > a:nth-child(3)").click()
 
-    # Timestamp: End Test
-    testEnd = datetime.now()
+        # Added wait to ensure results are updated
+        time.sleep(2)
 
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
+        # Run results
+        ids = driver.find_elements_by_class_name('search-results__result-title')
 
-    # Record Results To Tally For Final Results
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
+        for id in islice(ids, 0, 1, 1):
+        
+            result = (str(id.text)) 
+            word = 'travel'
+            word2 = 'insurance'
+            contains_words = word and word2 in result.lower()
+            self.assertTrue(contains_words, "ALERT: Search is not functioning as expected!")
 
-    # Record Results
-    testTime = (testEnd - testStart)
-
-    if testResult == "Fail":
-        print("*************Travel Insurance Link Results****************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
-
-    if speedTestResult == "Warning":
-        print("*************Travel Insurance Link Results****************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Wait
-    driver.implicitly_wait(15) 
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #3                                     #
@@ -217,76 +154,26 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #4                                    #
     ############################################################################################
 
-    # Open search
-    driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
-    search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
-    print('....Searching for GEEKHIVE....')
-    search.send_keys('GEEKHIVE')
-    driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    expectedURL = StarrEnvironmentLink + "search?term=GEEKHIVE"
-
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-        testsPass += 1
-    else:
-        testResult = "Fail"
-        testsFail += 1
-
-    # Timestamp: End Test
-    testEnd = datetime.now()
-
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
-
-    # Record Results To Tally For Final Results
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Record Results
-    testTime = (testEnd - testStart)
-
-    if testResult == "Fail":
-        print("****************Search Results: GEEKHIVE******************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
-
-    if speedTestResult == "Warning":
-        print("****************Search Results: GEEKHIVE******************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Run results
-    ids = driver.find_elements_by_class_name('search-results__no-results-text')
-
-    for id in islice(ids, 0, 1, 1):
-
-        result = (str(id.text))
+    def test_searchTestCaseFour (self):
         
-        if result == 'No Results':
-            testsPass += 1
-            break
-        else:
-            print('ALERT: Search is not functioning correctly.')
-            testsFail += 1
-            break
-    
-    # Wait
-    driver.implicitly_wait(15)
+        driver = self.driver
+
+        # Open search
+        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
+        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
+        search.send_keys('GEEKHIVE')
+        driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+
+        # Run results
+        ids = driver.find_elements_by_class_name('search-results__no-results-text')
+
+        for id in islice(ids, 0, 1, 1):
+
+            result = (str(id.text))
+            self.assertEqual(result, "No Results", "ALERT: Search is not functioning as expected!")
+
+        # Wait
+        driver.implicitly_wait(15)
 
     ############################################################################################
     #                                     END TEST CASE #4                                     #
@@ -296,80 +183,28 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #5                                    #
     ############################################################################################
 
-    # Open search
-    driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
-    search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
-    print('....Searching for STARR INVESTMENT HOLDINGS....')
-    search.send_keys('STARR INVESTMENT HOLDINGS')
-    driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    expectedURL = StarrEnvironmentLink + "search?term=STARR+INVESTMENT+HOLDINGS"
-
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-        testsPass += 1
-    else:
-        testResult = "Fail"
-        testsFail += 1
-
-    # Timestamp: End Test
-    testEnd = datetime.now()
-
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
-
-    # Record Results To Tally For Final Results
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Record Results
-    testTime = (testEnd - testStart)
-
-    if testResult == "Fail":
-        print("********Search Results: STARR INVESTMENT HOLDINGS*********")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
-
-    if speedTestResult == "Warning":
-        print("********Search Results: STARR INVESTMENT HOLDINGS*********")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Run results
-    ids = driver.find_elements_by_class_name('search-results__result-title')
-
-    for id in islice(ids, 0, 1, 1):
-
-        result = (str(id.text))
+    def test_searchTestCaseFive (self):
         
-        word = 'starr investment holdings'
+        driver = self.driver
 
-        contains_word = word in result.lower()
-        
-        if contains_word == False:
-            print('ALERT: Search is not functioning correctly.')
-            testsFail += 1
-            break
-        else:
-            testsPass += 1
-            break
+        # Open search
+        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
+        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
+        search.send_keys('STARR INVESTMENT HOLDINGS')
+        driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+
+        # Run results
+        ids = driver.find_elements_by_class_name('search-results__result-title')
+
+        for id in islice(ids, 0, 1, 1):
+
+            result = (str(id.text))
+            word = 'starr investment holdings'
+            contains_word = word in result.lower()
+            self.assertTrue(contains_word, "ALERT: Search is not functioning as expected!")
     
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
         
     ############################################################################################
     #                                     END TEST CASE #5                                     #
@@ -379,166 +214,49 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #6                                    #
     ############################################################################################
 
-    print('....Testing case sensitivity....')
-    # Open search
-    driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
-    search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
-    print('....Searching for starr investment holdings....')
-    search.send_keys('starr investment holdings')
-    driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
-    
-    expectedURL = StarrEnvironmentLink + "search?term=starr+investment+holdings"
+    def test_searchTestCaseSeven (self):
 
-    # Running duplicate test to check for sensitivity in search functionality
-    # Excluding normal speed test
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-        testsPass += 1
-    else:
-        testResult = "Fail"
-        testsFail += 1
+        driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
+        print('....Testing the ability to search for special charaters without redirect or crash....')
 
-    if testResult == "Fail":
-        print("********Search Results: STARR INVESTMENT HOLDINGS*********")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
+        # Open search
+        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
+        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
+        search.send_keys('!@#$%^')
 
-    # Run results
-    ids = driver.find_elements_by_class_name('search-results__result-title')
+        # Pressing and releasing enter from the search box
+        print('....Testing the ability to hit enter from after typing...')
+        keyboard = Controller()
+        keyboard.press(Key.enter)
+        keyboard.release(Key.enter)
+        time.sleep(2)
 
-    for id in islice(ids, 0, 1, 1):
+        expectedURL = StarrEnvironmentLink + "search?term=%21%40%23%24%25%5E"
+        self.assertEqual(driver.current_url, expectedURL)
 
-        result = (str(id.text))
+        # Run results
+        ids = driver.find_elements_by_class_name('search-results__no-results-text')
+
+        for id in islice(ids, 0, 1, 1):
         
-        word = 'starr investment holdings'
-
-        contains_word = word in result.lower()
-        
-        if contains_word == False:
-            print('ALERT: Search is not functioning correctly.')
-            testsFail += 1
-            break
-        else:
-            testsPass += 1
-            break
+            result = (str(id.text))
+            self.assertEqual(result, "No Results", "ALERT: Search is not functioning as expected!")
     
-    # Wait
-    driver.implicitly_wait(15)
+        # Wait
+        driver.implicitly_wait(15)
         
     ############################################################################################
     #                                     END TEST CASE #6                                     #
     ############################################################################################
-
-    ############################################################################################
-    #                                    START TEST CASE #7                                    #
-    ############################################################################################
-
-    print('....Testing the ability to search for special charaters without redirect or crash....')
-
-    # Open search
-    driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
-    search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
-    print('....Searching for !@#$%^....')
-    search.send_keys('!@#$%^')
-
-    # Pressing and releasing enter from the search box
-    print('....Testing the ability to hit enter from after typing...')
-    keyboard = Controller()
-    keyboard.press(Key.enter)
-    keyboard.release(Key.enter)
-    time.sleep(2)
-
-    #driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
-
-    # Timestamp: Start Test
-    testStart = datetime.now()
-
-    expectedURL = StarrEnvironmentLink + "search?term=%21%40%23%24%25%5E"
-
-    if driver.current_url == expectedURL:
-        testResult = "Pass"
-        testsPass += 1
-    else:
-        testResult = "Fail"
-        testsFail += 1
-
-    # Timestamp: End Test
-    testEnd = datetime.now()
-
-    # Validation of Page Load Speed
-    testTime = (testEnd - testStart)
-    if testTime.seconds > expectedPageLoadTimeInSeconds:
-        speedTestResult = "Warning"
-        testNotes = "Page load time is slow. Time: " + str(testTime)
-    else:
-        speedTestResult = "Pass"
-        testNotes = "Page load time is: " + str(testTime)
-
-    # Record Results To Tally For Final Results
-    if speedTestResult == "Pass":
-        testsPass += 1
-    elif speedTestResult == "Fail":
-        testsFail += 1
-    elif speedTestResult == "Warning":
-        testsWarning += 1
-
-    # Record Results
-    testTime = (testEnd - testStart)
-
-    if testResult == "Fail":
-        print("******************Search Results: !@#$%^******************")
-        print("URL Test Result: " + str(testResult))
-        print("**********************************************************")
-
-    if speedTestResult == "Warning":
-        print("******************Search Results: !@#$%^******************")
-        print("Speed Test Result: " + str(speedTestResult))
-        print(testNotes)
-        print("**********************************************************")
-
-    # Run results
-    ids = driver.find_elements_by_class_name('search-results__result-title')
-
-    for id in islice(ids, 0, 1, 1):
-    
-        result = (str(id.text))
-        
-        if result == 'No Results':
-            testsPass += 1
-            break
-        else:
-            print('ALERT: Search is not functioning correctly.')
-            testsFail += 1
-            break
-    
-    # Wait
-    driver.implicitly_wait(15)
-        
-    ############################################################################################
-    #                                     END TEST CASE #7                                     #
-    ############################################################################################
-
-    # Print Results Of Test Script
-    print("                                          ")
-    print("##########################################")
-    print("########## Search Test Results ###########")
-    print("##########################################")
-    print("Number of Pass Results: " + str(testsPass))
-    print("Number of Fail Results: " + str(testsFail))
-    print("Number of Warnings: " + str(testsWarning))
-    print("Total Run Time of Script: " + str(datetime.now() - scriptStart))
-    print("##########################################")
-    print("############## Test Complete #############")
-    print("##########################################")
-    print("                                          ")
     
 ####################################################################################################
 #                                       END SEARCH COMPONENT                                       #
 ####################################################################################################
 
-test_starrHomePage (testsPass,testsFail, testsWarning, testResult)
-test_searchHomepage (testsPass,testsFail, testsWarning, testResult)
-    #Test is complete
+#Test is complete
+if __name__ == '__main__':
+    unittest.main()
 
 ################################################################################################
 ################ Starr Companies Site Automation Header Links Test Script ######################
