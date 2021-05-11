@@ -36,37 +36,44 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #1                                    #
     ############################################################################################
 
-    def test_searchTestCaseSeven (self):
-        
+    def test_domesticLink (self):
+            
         driver = self.driver
-        StarrEnvironmentLink = "https://www.starrcompanies.com/"
-        print('....Testing the ability to search for special charaters without redirect or crash....')
+        expectedPageLoadTimeInSeconds = 10
 
-        # Open search
-        driver.find_element(By.CSS_SELECTOR, "#search-toggle > svg").click()
-        search = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > input")))
-        search.send_keys('!@#$%^')
+        # Wait
+        driver.implicitly_wait(15)
 
-        # Pressing and releasing enter from the search box
-        print('....Testing the ability to hit enter from after typing...')
-        keyboard = Controller()
-        keyboard.press(Key.enter)
-        keyboard.release(Key.enter)
-        time.sleep(2)
+        # Timestamp: Start Test
+        testStart = datetime.now()
 
-        #driver.find_element(By.CSS_SELECTOR, "#header > header > div.sticky-nav > nav > div.sticky-nav__search-container > form > label > svg").click()
+        # Open Nav and navigate to Domestic
+        driver.find_element(By.CSS_SELECTOR, "#link-group-1 > a").click()
+        driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li:nth-child(2) > a").click()
+        driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li.flyout-nav__list-item.flyout-nav__list-item--active > div > ul > li:nth-child(1) > a").click()
+ 
+        
+        driver.switch_to.window(driver.window_handles[1])
+        expectedURL = "https://www.starrlink.com/signin"
 
-        expectedURL = StarrEnvironmentLink + "search?term=%21%40%23%24%25%5E"
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body > ui-view > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(7) > button")))
+
         self.assertEqual(driver.current_url, expectedURL)
 
-        # Run results
-        ids = driver.find_elements_by_class_name('search-results__no-results-text')
+        # Timestamp: End Test
+        testEnd = datetime.now()
 
-        for id in islice(ids, 0, 1, 1):
-        
-            result = (str(id.text))
-            self.assertEqual(result, "No Results", "ALERT: Search is not functioning as expected!")
-    
+        # Record Results
+        testTime = (testEnd - testStart)
+
+        self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
+
+        # Close Tab
+        driver.close() 
+
+        # Switch Back To First Tab
+        driver.switch_to.window(driver.window_handles[0])
+
         # Wait
         driver.implicitly_wait(15)
 

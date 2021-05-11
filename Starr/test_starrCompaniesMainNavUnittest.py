@@ -28,9 +28,6 @@ class TestMainNavLinks(unittest.TestCase):
         self.driver.quit()
 
     def test_starrHomePage (self):
-     
-        # Loading message
-        print("....Checking Starr Companies homepage....")
 
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -1794,7 +1791,9 @@ class TestMainNavLinks(unittest.TestCase):
         driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li.flyout-nav__list-item.flyout-nav__list-item--active > div > ul > li:nth-child(1) > a").click()
         driver.implicitly_wait(15)
         driver.switch_to.window(driver.window_handles[1])
+
         expectedURL = "https://www.starrlink.com/signin"
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body > ui-view > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(7) > button")))
         self.assertEqual(driver.current_url, expectedURL)
 
         # Timestamp: End Test
