@@ -21,13 +21,13 @@ class TestHamburgerNavLinks(unittest.TestCase):
         self.driver.get("https://www.starrcompanies.com/")
         # Accept Cookies
         self.driver.find_element(By.CSS_SELECTOR, "body > div.privacy-warning.permisive > div.submit > a").click() 
-        self.driver.set_window_size(664, 620)
+        self.driver.set_window_size(664, 820)
 
     # tearDown runs after each test case
     def tearDown(self):
         self.driver.quit()
 
-    def test_starrHomePage (self):
+    def test_starr(self):
      
         driver = self.driver
         StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -2147,7 +2147,8 @@ class TestHamburgerNavLinks(unittest.TestCase):
 
         # Open hamburger menu and select Careers
         driver.find_element(By.CSS_SELECTOR, "#hamburger_icon").click()
-        driver.find_element(By.CSS_SELECTOR, "#header > header > section > footer > a").click()
+        careersLinkLoading = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > section > footer > a")))
+        careersLinkLoading.click()
         expectedURL = StarrEnvironmentLink + "Careers"
         self.assertEqual(driver.current_url, expectedURL)
 

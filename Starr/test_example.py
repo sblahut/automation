@@ -27,6 +27,7 @@ class TestSearchComponent(unittest.TestCase):
         self.driver.get("https://www.starrcompanies.com/")
         # Accept Cookies
         self.driver.find_element(By.CSS_SELECTOR, "body > div.privacy-warning.permisive > div.submit > a").click() 
+        self.driver.set_window_size(664, 820)
     
     # tearDown runs after each test case
     def tearDown(self):
@@ -36,9 +37,10 @@ class TestSearchComponent(unittest.TestCase):
     #                                    START TEST CASE #1                                    #
     ############################################################################################
 
-    def test_domesticLink (self):
+    def test_careersLink (self):
             
         driver = self.driver
+        StarrEnvironmentLink = "https://www.starrcompanies.com/"
         expectedPageLoadTimeInSeconds = 10
 
         # Wait
@@ -47,17 +49,13 @@ class TestSearchComponent(unittest.TestCase):
         # Timestamp: Start Test
         testStart = datetime.now()
 
-        # Open Nav and navigate to Domestic
-        driver.find_element(By.CSS_SELECTOR, "#link-group-1 > a").click()
-        driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li:nth-child(2) > a").click()
-        driver.find_element(By.CSS_SELECTOR, "#link-group-1 > div > ul > li.flyout-nav__list-item.flyout-nav__list-item--active > div > ul > li:nth-child(1) > a").click()
- 
+        # Open hamburger menu and select Careers
         
-        driver.switch_to.window(driver.window_handles[1])
-        expectedURL = "https://www.starrlink.com/signin"
+        driver.find_element(By.CSS_SELECTOR, "#hamburger_icon").click()
 
-        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "body > ui-view > div > div > div > div > div:nth-child(2) > div > div > div > div > div:nth-child(7) > button")))
-
+        careersLinkLoading = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > section > footer > a")))
+        careersLinkLoading.click()
+        expectedURL = StarrEnvironmentLink + "Careers"
         self.assertEqual(driver.current_url, expectedURL)
 
         # Timestamp: End Test
@@ -67,12 +65,6 @@ class TestSearchComponent(unittest.TestCase):
         testTime = (testEnd - testStart)
 
         self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
-
-        # Close Tab
-        driver.close() 
-
-        # Switch Back To First Tab
-        driver.switch_to.window(driver.window_handles[0])
 
         # Wait
         driver.implicitly_wait(15)
