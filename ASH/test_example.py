@@ -25,27 +25,29 @@ class TestFooterLinks(unittest.TestCase):
         
         # Open Domain
         self.driver.get("https://www.hematology.org/")
-        #Scroll Down To Footer
-        self.driver.execute_script("window.scrollTo(0, window.scrollY + 9999)")
-
+        #self.driver.set_window_size(800,600)
+        
     # Teardown
     def tearDown(self):
         self.driver.quit()
 
-    def test_privacyPoliciesLink (self):
+    def test_ashStoreLink (self):
         
         driver = self.driver
-        AshEnvironmentLink = "https://www.hematology.org/"
         expectedPageLoadTimeInSeconds = 3
 
         # Timestamp: Start Test
         testStart = datetime.now()
 
-        # Click Privacy Policy Link
-        driver.find_element(By.CSS_SELECTOR, "body > footer > div.footer-bar.d-flex > p:nth-child(3) > a:nth-child(2)").click()
+        # Click Global Initiatives Link
+        driver.find_element(By.CSS_SELECTOR, ".nav-toggle").click()
+        driver.set_window_size(1200,800)
+        driver.implicitly_wait(15)
+        driver.execute_script("window.scrollTo(0, window.scrollY + 200)")
+        driver.find_element(By.CSS_SELECTOR, "#navbarCollapse > div > div.side-menu-container__white-section > ul > li:nth-child(6) > a").click()
         WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#navbar > a > img.logo")))
-        expectedURL = AshEnvironmentLink + "about/privacy-policy"
-        self.assertEqual(driver.current_url, expectedURL)
+        tag = "store"
+        self.assertIn(tag, driver.current_url)
 
         # Timestamp: End Test
         testEnd = datetime.now()
