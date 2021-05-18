@@ -1,21 +1,21 @@
 ################################################################################################
-##################### EXAMPLE SINGLE TEST CASE SCRIPT FOR TESTING PURPOSES #####################
+######### American Society of Hematology Site Automation Footer Links Test Script ##############
 ################################################################################################
 
-import time
-import requests
 import unittest
-from pynput.keyboard import Key, Controller
-from itertools import islice
-from bs4 import BeautifulSoup
+import time
 from datetime import datetime
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support import expected_conditions as EC
 
-class TestSearchComponent(unittest.TestCase):
+class TestFooterLinks(unittest.TestCase):
     
     def setUp(self):
         options = webdriver.ChromeOptions() 
@@ -24,38 +24,27 @@ class TestSearchComponent(unittest.TestCase):
         self.driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
         
         # Open Domain
-        self.driver.get("https://www.starrcompanies.com/")
-        # Accept Cookies
-        self.driver.find_element(By.CSS_SELECTOR, "body > div.privacy-warning.permisive > div.submit > a").click() 
-        self.driver.set_window_size(664, 820)
-    
-    # tearDown runs after each test case
+        self.driver.get("https://www.hematology.org/")
+        #Scroll Down To Footer
+        self.driver.execute_script("window.scrollTo(0, window.scrollY + 9999)")
+
+    # Teardown
     def tearDown(self):
         self.driver.quit()
 
-    ############################################################################################
-    #                                    START TEST CASE #1                                    #
-    ############################################################################################
-
-    def test_careersLink (self):
-            
+    def test_privacyPoliciesLink (self):
+        
         driver = self.driver
-        StarrEnvironmentLink = "https://www.starrcompanies.com/"
-        expectedPageLoadTimeInSeconds = 10
-
-        # Wait
-        driver.implicitly_wait(15)
+        AshEnvironmentLink = "https://www.hematology.org/"
+        expectedPageLoadTimeInSeconds = 3
 
         # Timestamp: Start Test
         testStart = datetime.now()
 
-        # Open hamburger menu and select Careers
-        
-        driver.find_element(By.CSS_SELECTOR, "#hamburger_icon").click()
-
-        careersLinkLoading = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#header > header > section > footer > a")))
-        careersLinkLoading.click()
-        expectedURL = StarrEnvironmentLink + "Careers"
+        # Click Privacy Policy Link
+        driver.find_element(By.CSS_SELECTOR, "body > footer > div.footer-bar.d-flex > p:nth-child(3) > a:nth-child(2)").click()
+        WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "#navbar > a > img.logo")))
+        expectedURL = AshEnvironmentLink + "about/privacy-policy"
         self.assertEqual(driver.current_url, expectedURL)
 
         # Timestamp: End Test
@@ -63,7 +52,6 @@ class TestSearchComponent(unittest.TestCase):
 
         # Record Results
         testTime = (testEnd - testStart)
-
         self.assertGreaterEqual (expectedPageLoadTimeInSeconds, testTime.seconds, "Page load time is slow. Time: " + str(testTime))
 
         # Wait
