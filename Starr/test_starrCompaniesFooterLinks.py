@@ -2,12 +2,10 @@
 ################ Starr Companies Site Automation Footer Links Test Script ######################
 ################################################################################################
 
-import time
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 # Main Domain Link
 StarrEnvironmentLink = "https://www.starrcompanies.com/"
@@ -24,17 +22,9 @@ testResult = ""
 # Record Script Start Time for Script Duration
 scriptStart = datetime.now()
 
-# Set options variable
-options = webdriver.ChromeOptions() 
-
-# Maximize window
-options.add_argument("start-maximized")
-
-# Disable info bars
-options.add_argument('disable-infobars')
-
-# Set chromedriver variable
-driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
+# Declare Chrome Driver
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.maximize_window()
 
 # Wait
 driver.implicitly_wait(15)

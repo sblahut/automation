@@ -2,18 +2,13 @@
 #################### Geekhive Site Automation Header Links Test Script #########################
 ################################################################################################
 
-import pytest
 import time
 from datetime import datetime
-import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.support import expected_conditions as EC
+
 
 # Main Domain Link
 GeekhiveEnvironmentLink = "https://www.geekhive.com/"
@@ -33,7 +28,8 @@ testResult = ""
 scriptStart = datetime.now()
 
 # Declare Chrome Driver
-driver = webdriver.Chrome("./chromedriver")
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.maximize_window()
 
 # Wait
 driver.implicitly_wait(15)

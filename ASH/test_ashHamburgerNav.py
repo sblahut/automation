@@ -2,18 +2,12 @@
 ########## American Society of Hematology Site Automation Hamburger Links Test Script ##########
 ################################################################################################
 
-import pytest
 import time
 from datetime import datetime
-import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 # Main Domain Link
 AshEnvironmentLink = "https://www.hematology.org/"
@@ -30,8 +24,9 @@ testResult = ""
 # Record Script Start Time for Script Duration
 scriptStart = datetime.now()
 
-# Declare Chrome Driver
-driver = webdriver.Chrome("./chromedriver")
+        # Declare Chrome Driver
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.maximize_window()
 
 # Wait
 driver.implicitly_wait(15)

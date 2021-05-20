@@ -2,21 +2,18 @@
 ################ Starr Companies Site Automation Footer Links Test Script ######################
 ################################################################################################
 
-import time
 import unittest
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 class TestFooterLinks(unittest.TestCase):
     
     def setUp(self):
-        options = webdriver.ChromeOptions() 
-        options.add_argument("start-maximized")
-        options.add_argument('disable-infobars')
-        self.driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
+        # Declare Chrome Driver
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver.maximize_window()
         
         # Open Domain
         self.driver.get("https://www.starrcompanies.com/")

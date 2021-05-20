@@ -3,25 +3,22 @@
 ################################################################################################
 
 import time
-import requests
 import unittest
 from pynput.keyboard import Key, Controller
 from itertools import islice
-from bs4 import BeautifulSoup
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class TestSearchComponent(unittest.TestCase):
     
     def setUp(self):
-        options = webdriver.ChromeOptions() 
-        options.add_argument("start-maximized")
-        options.add_argument('disable-infobars')
-        self.driver=webdriver.Chrome(chrome_options=options, executable_path=r'./chromedriver')
+        # Declare Chrome Driver
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver.maximize_window()
         
         # Open Domain
         self.driver.get("https://www.starrcompanies.com/")

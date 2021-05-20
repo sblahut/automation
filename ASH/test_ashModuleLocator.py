@@ -4,17 +4,15 @@
 
 # The 'element' variable will determine which web element you are trying to locate on the webpage. 
 
-from selenium import webdriver
 import time
 from datetime import datetime
-from selenium.common.exceptions import TimeoutException
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.common.by import By
 
-# Declare Chrome Driver Vairable
-driver = webdriver.Chrome("./chromedriver")
+# Declare Chrome Driver
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.maximize_window()
 
 # Wait
 driver.implicitly_wait(15)

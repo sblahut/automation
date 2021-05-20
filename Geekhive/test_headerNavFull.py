@@ -1,8 +1,8 @@
-import unittest
-from datetime import datetime
+
 import time
+from datetime import datetime
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
 
 GeekhiveEnvironmentLink = "https://www.geekhive.com/"
@@ -30,9 +30,9 @@ headerNavLinks = {
 #Record Script Start Time for Script Duration
 scriptStart = datetime.now()
 
-#Initialize browser to get to webpage
-driver = webdriver.Chrome("./chromedriver")
-driver.set_window_size(1920, 1080)
+# Declare Chrome Driver
+driver = webdriver.Chrome(ChromeDriverManager().install())
+driver.maximize_window()
 
 
 TestsPass = 0
