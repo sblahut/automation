@@ -31,9 +31,9 @@ def eye_aspect_ratio(eye):
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
-ap.add_argument("-p", "--shape-predictor", default="drowsy_driver_detector/shape_predictor_68_face_landmarks.dat",
-	help="path to facial landmark predictor")
-ap.add_argument("-a", "--alarm", type=str, default="drowsy_driver_detector/honk_honk_x.wav",
+ap.add_argument("-p", "--shape-predictor", default="shape_predictor_68_face_landmarks.dat",
+    help="path to facial landmark predictor")
+ap.add_argument("-a", "--alarm", type=str, default="honk_honk_x.wav",
 	help="path alarm .WAV file")
 ap.add_argument("-w", "--webcam", type=int, default=0,
 	help="index of webcam on system")
