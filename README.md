@@ -97,15 +97,3 @@ Contributors:
 Steven Blahut
 
 For further details or questions, please refer to the project’s issue tracker on GitHub or contact the repository maintainer.
-
-
-
-
-
-
-
-
-
-Search
-
-Deep research
