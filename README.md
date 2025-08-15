@@ -88,7 +88,7 @@ Push to the Branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 
 📄 License
-This is a private theme developed for Detox Nation by Steven Blahut and Zero Tech, LLC. All rights reserved.
+This is a private code developed by Steven Blahut and Zero Tech, LLC. All rights reserved.
 
 📞 Contact
 Sblahut111@gmail.com
