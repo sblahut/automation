@@ -1,99 +1,96 @@
-# Automation Project Documentation
+🤖 sblahut/automation
+This repository serves as a centralized collection of automated testing and machine learning / artificial intelligence projects. It showcases various implementations ranging from web automation using Selenium to advanced AI applications like image recognition and anomaly detection.
 
-This repository contains a range of automated testing and machine learning projects organized into two main categories: Selenium Projects and Machine Learning / AI Projects.
+🌟 Features
+This repository is broadly categorized into two main sections:
 
-Selenium Projects use Selenium with Python to perform automated testing. Each sub-project is placed in its own folder with its dedicated chromedriver (or appropriate driver) for headless browsing and individual test cases. Machine Learning / AI Projects include various projects covering topics such as data anomaly detection and image recognition. Each project is self-contained and may require different runtime parameters.
+🌐 Selenium Projects
+These projects leverage Selenium with Python to perform automated testing tasks. Each sub-project is self-contained within its respective directory, complete with its own ChromeDriver and individual test cases.
 
-Installation:  
-First, clone the repository:
-git clone https://github.com/sblahut/automation.git cd automation
+AB (Validation Scripts): A set of validation scripts for specific functionalities.
 
-It is recommended to create and activate a Python virtual environment:
-python -m venv env source env/bin/activate # On Windows use: env\Scripts\activate
+ABC (Automation Test Suite): A comprehensive automation test suite.
 
-Then install the required modules:
+ASH (Automation Test Suite): Another dedicated automation test suite.
+
+Geekhive (Automation Test Suite): An automation test suite tailored for the Geekhive platform.
+
+Starr (Automation Test Suite): An automation test suite for the Starr application.
+
+🧠 Machine Learning / AI Projects
+This section comprises diverse projects focusing on Machine Learning and Artificial Intelligence techniques, including data analysis and computer vision.
+
+anomaly_detection (Offset Data Detection / Ghost Detection): Detects unusual patterns or outliers in data.
+
+anpr_detection (Automatic Number Plate Recognition): Identifies and reads vehicle license plates from images or video feeds.
+
+drowsy_driver_detector (Drowsy Driver Detector): A system designed to detect signs of drowsiness in drivers.
+
+encryption-decryption (Encryption/Decryption Script): A utility for encrypting and decrypting data.
+
+facial_detection (Face Detection for Webcam/Video/Image): Implements face detection capabilities from various sources.
+
+traffic_sign_detection (Traffic Sign Recognition): Recognizes and classifies traffic signs.
+
+🚀 Getting Started
+To get a local copy up and running, follow these simple steps.
+
+Prerequisites
+Python 3.x: Most projects are written in Python.
+
+pip: Python package installer.
+
+Installation
+Clone the repository:
+
+git clone https://github.com/sblahut/automation.git
+
+Navigate to a project directory:
+
+cd automation/path/to/your/project
+
+Install project-specific dependencies:
+Each project may have its own requirements.txt or specific dependencies. Install them as needed. For example:
+
 pip install -r requirements.txt
 
-(Ensure you have a requirements.txt file with the necessary modules.)
+For Selenium projects: Ensure you have the correct chromedriver executable in the respective project folder.
 
-Requirements:  
-Python 3.9 or above, Pip 19.0 or above, and ensure chromedriver.exe is placed in each Selenium project folder. Additional multi-environment variables may be needed.
+🛠️ Usage
+Each project within the repository is designed to be largely self-contained. Refer to the specific project's directory for detailed instructions and potential runtime parameters.
 
-Module Download Links:  
-Pytest: https://pypi.org/project/pytest/#files  
-Requests: https://pypi.org/project/requests/#files  
-Times: https://pypi.org/project/times/  
-Pip: https://pypi.org/project/pip/#files  
-Selenium: https://pypi.org/project/selenium/#files  
-Beautiful Soup: https://pypi.org/project/beautifulsoup4/  
-Keyboard: https://pypi.org/project/keyboard/  
-Pynput: https://pypi.org/project/pynput/  
-OpenCV: https://pypi.org/project/opencv-python/  
-Numpy: https://pypi.org/project/numpy/  
-Cryptography: https://pypi.org/project/cryptography/  
-Fernet: https://pypi.org/project/fernet/  
-Playsound: https://pypi.org/project/playsound/  
-Imutils: https://pypi.org/project/imutils/  
-Dlib: https://pypi.org/project/dlib/  
-Cmake: https://pypi.org/project/cmake/  
-Tensorflow: https://pypi.org/project/tensorflow/  
-Pandas: https://pypi.org/project/pandas/  
-PIL (Pillow): https://pypi.org/project/Pillow/  
-Keras: https://pypi.org/project/Keras/  
-Sklearn/Scikit-Learn: https://pypi.org/project/sklearn/ and https://pypi.org/project/scikit-learn/
+Running Selenium Tests
+Navigate to the specific Selenium project folder and execute the Python test scripts.
 
-Projects and How to Start Them:
+cd automation/Selenium_Projects/ABC
+python your_test_script.py
 
-Selenium-Based Automation Projects:  
-For each Selenium project, navigate to its folder where the chromedriver and test cases reside.
+Running ML/AI Projects
+Navigate to the specific ML/AI project folder. Most projects will have a main Python script to run.
 
-AB (Validation Scripts): Navigate to the AB folder, update any user or domain variables, and run:
-python test_validation.py
+cd automation/Machine_Learning_AI_Projects/facial_detection
+python main_detection_script.py
 
-(Or use pytest if tests are structured accordingly.)
+🤝 Contributing
+Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-ABC (Automation Test Suite): Enter the ABC folder, ensure the chromedriver is configured, then run:
-pytest
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! ⭐
 
-ASH (Automation Test Suite): Go to the ASH folder, configure necessary environment variables, then execute:
-python main_test.py
+Fork the Project
 
-(The command may differ based on the entry script.)
+Create your Feature Branch (git checkout -b feature/AmazingFeature)
 
-Geekhive (Automation Test Suite): Enter the Geekhive folder, follow any specific instructions provided, then run:
-pytest
+Commit your Changes (git commit -m 'Add some AmazingFeature')
 
-Starr (Automation Test Suite): Enter the Starr folder, adjust user/domain parameters as needed, and start with:
-python starr_main.py
+Push to the Branch (git push origin feature/AmazingFeature)
 
-Machine Learning / AI Projects:  
-These projects involve processing data, training models, or running detection scripts.
+Open a Pull Request
 
-anomaly_detection (Offset Data Detection / Ghost Detection): Navigate to the anomaly_detection folder, check for adjustable parameters, then run:
-python anomaly_detection.py
+📄 License
+This is a private theme developed for Detox Nation by Steven Blahut and Zero Tech, LLC. All rights reserved.
 
-anpr_detection (Automatic Number Plate Recognition): Enter the anpr_detection folder, verify that your webcam/video/image input is configured, then execute:
-python anpr_detection.py
+📞 Contact
+Sblahut111@gmail.com
 
-Follow any on-screen prompts for input selection.
-
-drowsy_driver_detector (Drowsy Driver Detector): Go to the drowsy_driver_detector folder, adjust eye-closure time thresholds as needed, then run:
-python drowsy_driver_detector.py
-
-An alarm will trigger if drowsiness is detected.
-
-encryption-decryption (Encryption/Decryption Script): Navigate to the encryption-decryption folder, update parameters (file paths, passwords, or CSV inputs), then run:
-python encryption_decryption.py --mode encrypt --input file.csv
-
-(Modify command options as necessary.)
-
-facial_detection (Face Detection for Webcam/Video/Image): Enter the facial_detection folder, set up your camera or provide an image/video file, then run:
-python facial_detection.py
-
-traffic_sign_detection (Traffic Sign Recognition): Navigate to the traffic_sign_detection folder, confirm that your media input is available, then run:
-python traffic_sign_detection.py
-
-Contributors:  
-Steven Blahut
-
-For further details or questions, please refer to the project’s issue tracker on GitHub or contact the repository maintainer.
+Project Link: https://github.com/sblahut/automation
